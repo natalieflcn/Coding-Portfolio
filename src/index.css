@@ -38,6 +38,11 @@
   --color-dark-300: #0c0713;
   --color-light-100: #fff;
 
+  /* Gradients */
+  --color-pink-gradient: linear-gradient(to right, #e9abf8, #dc3bdf);
+  --color-purple-gradient: linear-gradient(to right, #c27aff, #731fba);
+  --color-blue-gradient: linear-gradient(to right, #22a7f1, #1326b3);
+
   /* Box Shadows */
   --shadow-glow-magenta:
     0 0 8px var(--color-pink-300), 0 0 24px rgba(255, 43, 214, 0.5);
@@ -79,6 +84,8 @@
   --animate-flicker: flicker 4s infinite;
   --animate-scan: scan 6s linear infinite;
 }
+
+/* General Stylistic Choices */
 
 :root {
   /* --text: #6b6375;
@@ -193,3 +200,47 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 } */
+
+/* Background */
+
+/* Circuit Grid */
+.circuit-pulse path[fill] {
+  stroke-width: 1;
+  stroke: var(--color-pink-100);
+  stroke-opacity: 0.4;
+  animation: flicker var(--duration, 100s) var(--delay, 0s) infinite;
+}
+
+.circuit-pulse path[stroke] {
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 10 90; /* 6% lit, 94% gap = 100 total */
+  animation: circuit-travel var(--duration, 6s) linear var(--delay, 0s) infinite;
+}
+
+.circuit-pulse-inner path[stroke] {
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 40 60; /* 6% lit, 94% gap = 100 total */
+  animation: circuit-travel var(--duration, 6s) linear var(--delay, 0s) infinite;
+}
+
+/* one glow on the whole layer, not one per path */
+.circuit-pulse path[stroke] {
+  filter: drop-shadow(0 0 4px var(--color-pink-100));
+}
+
+@keyframes circuit-travel {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: -60;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-pulse path[stroke] {
+    display: none;
+  }
+}

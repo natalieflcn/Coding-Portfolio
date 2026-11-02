@@ -1,17 +1,22 @@
+@import "tailwindcss";
+
 /* Font Definitions */
 @font-face {
   font-family: Orbitron;
   src: url("src/assets/fonts/Orbitron-Bold.ttf");
+  font-weight: 700;
 }
 
 @font-face {
   font-family: Inter;
-  src: url("src/assets/fonts/JetBrainsMono-Variable.ttf");
+  src: url("src/assets/fonts/Inter-Variable.ttf");
+  font-weight: 100 900;
 }
 
 @font-face {
   font-family: JetBrainsMono;
-  src: url("src/assets/fonts/Inter-VariableFont.ttf");
+  src: url("src/assets/fonts/JetBrainsMono-VariableFont.ttf");
+  font-weight: 100 800;
 }
 
 @theme {
@@ -34,13 +39,15 @@
   --color-light-100: #fff;
 
   /* Box Shadows */
-  --glow-magenta: "0 0 8px var(--color-pink-300), 0 0 24px rgba(255,43,214,.5)";
-  --glow-cyan: "0 0 8px var(--color-blue-100), 0 0 24px rgba(34, 167, 241,.45)";
+  --shadow-glow-magenta:
+    0 0 8px var(--color-pink-300), 0 0 24px rgba(255, 43, 214, 0.5);
+  --shadow-glow-cyan:
+    0 0 8px var(--color-blue-100), 0 0 24px rgba(34, 167, 241, 0.45);
 
   /* Typography */
-  --heading: "Orbitron", sans-serif;
-  --sans: "Inter", sans-serif;
-  --mono: "JetBrainsMono", monospace;
+  --font-heading: "Orbitron", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrainsMono", monospace;
 
   /* Keyframes */
   @keyframes flicker {
@@ -74,7 +81,7 @@
 }
 
 :root {
-  --text: #6b6375;
+  /* --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
@@ -84,7 +91,7 @@
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px; */
 
   /* --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -93,7 +100,7 @@
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
+  color: var(--color-light-100);
   background: var(--color-dark-300);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -131,7 +138,7 @@ body {
 
 #root {
   width: 1200px;
-  background-color: var(--color-dark-200);
+  /* background-color: var(--color-dark-200); */
   max-width: 100%;
   margin: 0 auto;
   text-align: center;

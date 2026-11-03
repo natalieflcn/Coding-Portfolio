@@ -135,12 +135,6 @@
 
 body {
   margin: 0;
-
-  font-size: 0.75rem;
-
-  @media (min-width: 640px) {
-    font-size: 1rem;
-  }
 }
 
 /* Targets <div id=#root/> (Layout Constraints)*/
@@ -258,9 +252,8 @@ body {
 /* The magenta, rectangular outline around the panel */
 .panel-outline {
   border: 8px solid var(--color-pink-300);
-
-  box-shadow: 0 0 15px rgba(248, 216, 246, 0.7);
-  filter: drop-shadow(0 0 10px rgba(103, 12, 131, 0.45));
+  box-shadow: 0 0 8px rgba(250, 189, 246, 0.7);
+  filter: drop-shadow(0 0 11px rgba(103, 12, 131, 0.45));
   border-radius: 3px;
   padding: 1rem;
   background-color: rgba(12, 7, 19, 0.7);
@@ -268,33 +261,34 @@ body {
 
 /* A cyan hue added to the rim of the panel */
 .panel-glow {
+  /* Lifted custom CSS variables to .panel-glow from .panel, so .panel-title can derive these same variables */
+
   --tab-width: 0px; /* width of the tab (lowered top-left section) */
   --tab-height: 0px; /* how far down the tab sits */
   --diagonal: calc(
-    var(--tab-height) * 1.53
+    var(--tab-height) * 1.1
   ); /* horizontal run of the diagonal */
   --inset: 0px; /* this layer's inset (how far to shrink the layer) */
   --k: 0.3; /* accounting for diagonal shift per inset pixel */
-
+  filter: drop-shadow(0 0 5px rgba(64, 253, 255, 0.45));
   position: relative;
-  filter: drop-shadow(0 0 8px rgba(64, 253, 255, 0.45));
 
   @media (min-width: 640px) {
     /* small screens */
-    --tab-width: 190px;
+    /* --tab-width: 215px; */
     --tab-height: 40px;
   }
 
-  @media (min-width: 768px) {
-    /* medium screens */
-    --tab-width: 250px;
+  /* @media (min-width: 768px) {
+  
     --tab-height: 60px;
-  }
+    filter: drop-shadow(0 0 8px rgba(64, 253, 255, 0.45));
+  } */
 
   @media (min-width: 1024px) {
     /* large screens */
-    --tab-width: 300px;
-    --tab-height: 70px;
+    /* --tab-width: 300px; */
+    --tab-height: 50px;
   }
 }
 
@@ -377,6 +371,7 @@ body {
 /* Panel title that sits in the lowered tab area */
 .panel-title {
   position: relative;
+  display: inline-block;
   font-family: var(--font-heading);
   text-transform: uppercase;
   color: var(--color-light-100);
@@ -390,11 +385,11 @@ body {
     transform: translateY(-70%);
   }
 
-  @media (min-width: 768px) {
-    left: 3rem;
+  /* @media (min-width: 768px) {
+    left: 2rem;
   }
 
   @media (min-width: 1024px) {
     left: 1.5rem;
-  }
+  } */
 }

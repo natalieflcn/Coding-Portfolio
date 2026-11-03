@@ -1,5 +1,11 @@
+import Panel from "../components/layout/Panel";
+
 function Projects() {
-  return <div>This is my Projects.</div>;
+  return (
+    <div>
+      <Panel title="Projects">hi this is the projects</Panel>
+    </div>
+  );
 }
 
 export default Projects;

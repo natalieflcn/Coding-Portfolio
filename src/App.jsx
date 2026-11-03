@@ -12,7 +12,7 @@ function App() {
     <>
       <Background />
       <Header />
-      <div className="flex flex-col self-center  app-container md:w-1/2">
+      <div className="flex flex-col gap-5 sm:gap-7 xl:gap-10 self-center  app-container md:w-1/2">
         <Summary />
         <About />
         <Projects />

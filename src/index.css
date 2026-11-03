@@ -85,6 +85,8 @@
   /* Animations */
   --animate-flicker: flicker 4s infinite;
   --animate-scan: scan 6s linear infinite;
+
+  --breakpoint-xs: 450px;
 }
 
 /* GENERAL STYLES */
@@ -104,7 +106,7 @@
   h2 {
     font-family: var(--font-heading);
   }
-
+  /* 
   h1 {
     font-size: 50px;
     letter-spacing: -1.68px;
@@ -128,11 +130,17 @@
 
   @media (max-width: 1024px) {
     font-size: 16px;
-  }
+  } */
 }
 
 body {
   margin: 0;
+
+  font-size: 0.75rem;
+
+  @media (min-width: 640px) {
+    font-size: 1rem;
+  }
 }
 
 /* Targets <div id=#root/> (Layout Constraints)*/
@@ -147,6 +155,8 @@ body {
 }
 
 .app-container {
+  /* width: 1200px; */
+  max-width: 80%;
   width: 1200px;
 }
 
@@ -248,8 +258,7 @@ body {
 /* The magenta, rectangular outline around the panel */
 .panel-outline {
   border: 8px solid var(--color-pink-300);
-  box-shadow: 0 0 30px rgba(247, 114, 238, 0.75);
-  box-shadow: 0 0 20px rgba(252, 163, 246, 0.9);
+
   box-shadow: 0 0 15px rgba(248, 216, 246, 0.7);
   filter: drop-shadow(0 0 10px rgba(103, 12, 131, 0.45));
   border-radius: 3px;
@@ -259,14 +268,34 @@ body {
 
 /* A cyan hue added to the rim of the panel */
 .panel-glow {
-  --tab-width: 250px; /* width of the tab (lowered top-left section) */
-  --tab-height: 60px; /* how far down the tab sits */
-  --diagonal: 55px; /* horizontal run of the diagonal */
+  --tab-width: 0px; /* width of the tab (lowered top-left section) */
+  --tab-height: 0px; /* how far down the tab sits */
+  --diagonal: calc(
+    var(--tab-height) * 1.53
+  ); /* horizontal run of the diagonal */
   --inset: 0px; /* this layer's inset (how far to shrink the layer) */
   --k: 0.3; /* accounting for diagonal shift per inset pixel */
 
   position: relative;
   filter: drop-shadow(0 0 8px rgba(64, 253, 255, 0.45));
+
+  @media (min-width: 640px) {
+    /* small screens */
+    --tab-width: 190px;
+    --tab-height: 40px;
+  }
+
+  @media (min-width: 768px) {
+    /* medium screens */
+    --tab-width: 250px;
+    --tab-height: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    /* large screens */
+    --tab-width: 300px;
+    --tab-height: 70px;
+  }
 }
 
 /* The outer blue layer of the panel stack */
@@ -276,9 +305,10 @@ body {
   border-radius: 2px;
   background: linear-gradient(
     170deg,
-    var(--color-blue-200),
+    var(--color-blue-300),
     var(--color-blue-100)
   );
+  margin-top: 0.25rem;
 }
 
 /* Psuedo panel elements to create a stack of clipped shrinking panels, creating a multi-border effect */
@@ -338,18 +368,33 @@ body {
     ),
     var(--color-dark-200);
   --inset: 14px;
+
+  @media (max-width: 500px) {
+    padding: calc(var(--tab-height) + 1rem) 1rem 1rem;
+  }
 }
 
 /* Panel title that sits in the lowered tab area */
 .panel-title {
-  position: absolute;
-  top: calc((var(--tab-height) / 2));
-  left: 1.5rem;
-  z-index: 3;
-  transform: translateY(-70%);
+  position: relative;
   font-family: var(--font-heading);
-  font-size: 2rem;
   text-transform: uppercase;
   color: var(--color-light-100);
   text-shadow: 0 0 4px var(--color-pink-100);
+
+  @media (min-width: 640px) {
+    position: absolute;
+    top: calc((var(--tab-height) / 2));
+    left: 0;
+    z-index: 3;
+    transform: translateY(-70%);
+  }
+
+  @media (min-width: 768px) {
+    left: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    left: 1.5rem;
+  }
 }

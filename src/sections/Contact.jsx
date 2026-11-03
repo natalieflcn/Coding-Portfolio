@@ -16,7 +16,7 @@ const ContactButton = function ({ variant, className, children }) {
   return (
     <Button
       variant={variant}
-      className={`text-[0.6rem] w-full sm:text-xs lg: max-w-sm ${className}`}
+      className={`text-[0.6rem] w-full sm:text-xs lg: max-w-sm ${className}  text-white`}
     >
       {children}
     </Button>
@@ -32,8 +32,14 @@ function Contact() {
             size={40}
             fill="var(--color-pink-300)"
           />
-          <ContactButton variant="blue">
-            Connect with me on Linkedin
+          <ContactButton variant="blue" className="button-shimmer-linkedin">
+            <a
+              href="https://www.linkedin.com/in/natalieflcn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Connect with me on Linkedin
+            </a>
           </ContactButton>
         </LinkItem>
         <LinkItem>
@@ -42,8 +48,14 @@ function Contact() {
             size={40}
             fill="var(--color-pink-300)"
           />
-          <ContactButton variant="purple">
-            View the source code on GitHub
+          <ContactButton variant="purple" className="button-shimmer-github">
+            <a
+              href="https://github.com/natalieflcn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View my GitHub profile
+            </a>
           </ContactButton>
         </LinkItem>
         <LinkItem>
@@ -52,7 +64,14 @@ function Contact() {
             size={40}
             fill="var(--color-pink-300)"
           />
-          <ContactButton variant="red">Download CV/Resume</ContactButton>
+          <ContactButton variant="red" className="button-shimmer-download">
+            <a
+              href="/public/images/resume.png"
+              download="Natalie_Falcon_Resume"
+            >
+              Download CV/Resume
+            </a>
+          </ContactButton>
         </LinkItem>
       </div>
     </Panel>

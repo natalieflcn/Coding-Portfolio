@@ -235,16 +235,58 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: text-shimmer 3s ease-in-out infinite;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-@keyframes text-shimmer {
+@keyframes shimmer {
   0% {
     background-position: 100% center;
   }
   100% {
     background-position: -100% center;
   }
+}
+
+.button-shimmer-linkedin {
+  background: linear-gradient(
+    90deg,
+    var(--color-blue-300) 0%,
+    var(--color-blue-300) 30%,
+    var(--color-blue-100) 50%,
+    var(--color-blue-100) 50%,
+    var(--color-blue-300) 60%,
+    var(--color-blue-300) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.button-shimmer-github {
+  background: linear-gradient(
+    90deg,
+    var(--color-purple-300) 0%,
+    var(--color-purple-300) 30%,
+    var(--color-purple-100) 50%,
+    var(--color-purple-100) 50%,
+    var(--color-purple-300) 60%,
+    var(--color-purple-300) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.button-shimmer-download {
+  background: linear-gradient(
+    90deg,
+    var(--color-red-200) 0%,
+    var(--color-red-200) 30%,
+    var(--color-red-100) 50%,
+    var(--color-red-100) 50%,
+    var(--color-red-200) 60%,
+    var(--color-red-200) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
 /* Panel */

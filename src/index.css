@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: Inter;
-  src: url("src/assets/fonts/Inter-Variable.ttf");
+  src: url("src/assets/fonts/Inter-VariableFont.ttf");
   font-weight: 100 900;
 }
 
@@ -20,7 +20,7 @@
 }
 
 @theme {
-  /* Custom Variables */
+  /* CUSTOM VARIABLES */
 
   /* Color Palette */
   --color-pink-100: #e9abf8;
@@ -29,10 +29,12 @@
   --color-purple-100: #c27aff;
   --color-purple-200: #a453f8;
   --color-purple-300: #731fba;
+  --color-blue-0: ##40fdff;
   --color-blue-100: #22a7f1;
   --color-blue-200: #2868ed;
-  --color-dark-blue: #1326b3;
-  --color-red: #e8140d;
+  --color-blue-300: #1326b3;
+  --color-red-100: #e45955;
+  --color-red-200: #e8140d;
   --color-dark-100: #333749;
   --color-dark-200: #1a1426;
   --color-dark-300: #0c0713;
@@ -85,125 +87,74 @@
   --animate-scan: scan 6s linear infinite;
 }
 
-/* General Stylistic Choices */
+/* GENERAL STYLES */
 
+/* Targets HTML Document (Colors, Typography, Defaults) */
 :root {
-  /* --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px; */
-
-  /* --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace; */
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--color-light-100);
   background: var(--color-dark-300);
-  font-synthesis: none;
+  color: var(--color-light-100);
+  font: 18px/145% var(--font-sans);
+  letter-spacing: 0.18px;
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  h1,
+  h2 {
+    font-family: var(--font-heading);
+  }
+
+  h1 {
+    font-size: 50px;
+    letter-spacing: -1.68px;
+    margin: 32px 0;
+
+    @media (max-width: 1024px) {
+      font-size: 36px;
+      margin: 20px 0;
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 118%;
+    margin: 0 0 8px;
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
+  }
 
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-} */
-
 body {
   margin: 0;
 }
 
+/* Targets <div id=#root/> (Layout Constraints)*/
 #root {
-  width: 1200px;
-  /* background-color: var(--color-dark-200); */
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  /* border-inline: 1px solid var(--border); */
-  min-height: 100svh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 100svh;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.app-container {
+  width: 1200px;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+/* Circuit Grid Background */
+.circuit-pulse {
+  filter: drop-shadow(0 0 1px var(--color-pink-100));
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-} */
-
-/* Background */
-
-/* Circuit Grid */
 .circuit-pulse path[fill] {
   stroke-width: 1;
   stroke: var(--color-pink-100);
@@ -214,33 +165,191 @@ code {
 .circuit-pulse path[stroke] {
   stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 10 90; /* 6% lit, 94% gap = 100 total */
+  stroke-dasharray: 20 80; /* 6% lit, 94% gap = 100 total */
   animation: circuit-travel var(--duration, 6s) linear var(--delay, 0s) infinite;
-}
-
-.circuit-pulse-inner path[stroke] {
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-dasharray: 40 60; /* 6% lit, 94% gap = 100 total */
-  animation: circuit-travel var(--duration, 6s) linear var(--delay, 0s) infinite;
-}
-
-/* one glow on the whole layer, not one per path */
-.circuit-pulse path[stroke] {
-  filter: drop-shadow(0 0 4px var(--color-pink-100));
+  /* filter: drop-shadow(0 0 4px var(--color-pink-100)); */
 }
 
 @keyframes circuit-travel {
   from {
-    stroke-dashoffset: 40;
+    stroke-dashoffset: 20;
   }
   to {
-    stroke-dashoffset: -60;
+    stroke-dashoffset: -80;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .circuit-pulse path[stroke] {
+  .circuit-pulse path {
     display: none;
   }
+}
+
+/* Glow and Shimmer Effects */
+
+.text-glow {
+  color: var(--color-light-100);
+  animation: text-glow 5s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+  0% {
+    /* Subtle, tight glow */
+    text-shadow:
+      0 0 4px #fff,
+      0 0 10px var(--color-pink-300),
+      0 0 15px var(--color-pink-300);
+  }
+  50% {
+    /* Expanded, intense glow */
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px var(--color-pink-300),
+      0 0 25px var(--color-pink-300),
+      0 0 30px var(--color-pink-300);
+  }
+  100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 10px var(--color-pink-300),
+      0 0 15px var(--color-pink-300);
+  }
+}
+
+.text-shimmer {
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #dc3bdf 0%,
+    #dc3bdf 30%,
+    #fff 40%,
+    #3ff5fd 50%,
+    #dc3bdf 60%,
+    #dc3bdf 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: -100% center;
+  }
+}
+
+/* Panel */
+
+/* The magenta, rectangular outline around the panel */
+.panel-outline {
+  border: 8px solid var(--color-pink-300);
+  box-shadow: 0 0 30px rgba(247, 114, 238, 0.75);
+  box-shadow: 0 0 20px rgba(252, 163, 246, 0.9);
+  box-shadow: 0 0 15px rgba(248, 216, 246, 0.7);
+  filter: drop-shadow(0 0 10px rgba(103, 12, 131, 0.45));
+  border-radius: 3px;
+  padding: 1rem;
+  background-color: rgba(12, 7, 19, 0.7);
+}
+
+/* A cyan hue added to the rim of the panel */
+.panel-glow {
+  --tab-width: 250px; /* width of the tab (lowered top-left section) */
+  --tab-height: 60px; /* how far down the tab sits */
+  --diagonal: 55px; /* horizontal run of the diagonal */
+  --inset: 0px; /* this layer's inset (how far to shrink the layer) */
+  --k: 0.3; /* accounting for diagonal shift per inset pixel */
+
+  position: relative;
+  filter: drop-shadow(0 0 8px rgba(64, 253, 255, 0.45));
+}
+
+/* The outer blue layer of the panel stack */
+.panel {
+  display: grid;
+  position: relative;
+  border-radius: 2px;
+  background: linear-gradient(
+    170deg,
+    var(--color-blue-200),
+    var(--color-blue-100)
+  );
+}
+
+/* Psuedo panel elements to create a stack of clipped shrinking panels, creating a multi-border effect */
+.panel, /* The dark gap panel*/
+.panel::before, /* The outer blue panel*/
+.panel::after, /* The inner cyan panel*/
+.panel-inner /* The holographic screen */ {
+  clip-path: polygon(
+    /* left edge, down by the tab height */ var(--inset)
+      calc(var(--tab-height) + var(--inset)),
+    /* the horizontal length of the lowered tab */
+    calc(var(--tab-width) + var(--k) * var(--inset))
+      calc(var(--tab-height) + var(--inset)),
+    /* the diagonal up to the top edge */
+    calc(var(--tab-width) + var(--diagonal) + var(--k) * var(--inset))
+      var(--inset),
+    /* the top right corner */ calc(100% - var(--inset)) var(--inset),
+    /* the bottom right corner */ calc(100% - var(--inset))
+      calc(100% - var(--inset)),
+    /* the bottom left corner */ var(--inset) calc(100% - var(--inset))
+  );
+}
+
+/* Dark Gap Divider */
+.panel::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0; /* Inset that defines the pseudo element's rectangle starting point */
+  border-radius: 15px;
+  background: var(--color-dark-300);
+  --inset: 7px;
+}
+
+/* Cyan Inner Outline Divider */
+.panel::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0px; /* Inset that defines the pseudo element's rectangle starting point */
+  border-radius: 10px;
+  background: linear-gradient(215deg, #90fffe, #40fdff);
+  --inset: 12px;
+}
+
+/* Holographic Screen */
+.panel-inner {
+  position: relative;
+  z-index: 2;
+  border-radius: 15px;
+  padding: calc(var(--tab-height) + 1.5rem) 2rem 2rem;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0 2px,
+      transparent 2px 8px
+    ),
+    var(--color-dark-200);
+  --inset: 14px;
+}
+
+/* Panel title that sits in the lowered tab area */
+.panel-title {
+  position: absolute;
+  top: calc((var(--tab-height) / 2));
+  left: 1.5rem;
+  z-index: 3;
+  transform: translateY(-70%);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-light-100);
+  text-shadow: 0 0 4px var(--color-pink-100);
 }

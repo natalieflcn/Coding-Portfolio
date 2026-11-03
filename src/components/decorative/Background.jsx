@@ -6,10 +6,9 @@ const PULSE_COLORS = [
   "var(--color-pink-100)",
   "var(--color-pink-200)",
   "var(--color-pink-300)",
-  "var(--color-pink-gradient",
 ];
 
-export default function Background() {
+function Background() {
   const pulseRef = useRef(null);
 
   useEffect(() => {
@@ -19,9 +18,9 @@ export default function Background() {
     // Defining pulse properties on path[stroke]
     strokePaths.forEach((path) => {
       path.setAttribute("pathLength", "100");
-      const activePulse = Math.random() < 0.5;
+      const activePulse = Math.random() < 0.35;
       path.style.display = activePulse ? "" : "none";
-      path.style.setProperty("--duration", `${7 + Math.random() * 15}s`);
+      path.style.setProperty("--duration", `${3 + Math.random() * 6}s`);
       path.style.setProperty("--delay", `${-Math.random() * 8}s`);
       path.style.stroke =
         PULSE_COLORS[Math.floor(Math.random() * PULSE_COLORS.length)];
@@ -29,11 +28,10 @@ export default function Background() {
 
     // Defining animation properties for fill paths
     fillPaths.forEach((path) => {
-      path.style.setProperty(
-        "--duration",
-        `${0 + Math.random() * (30 - 7 + 1) + 7}s`,
-      );
-      path.style.setProperty("--delay", `${-Math.random() * 5}s`);
+      const activeFlicker = Math.random() < 0.35;
+      path.style.display = activeFlicker ? "" : "none";
+      path.style.setProperty("--duration", `${3 + Math.random() * 10}s`);
+      path.style.setProperty("--delay", `${-Math.random() * 4}s`);
     });
   }, []);
 
@@ -55,3 +53,5 @@ export default function Background() {
     </div>
   );
 }
+
+export default Background;

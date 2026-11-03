@@ -4,7 +4,7 @@
 
 ### Goals
 
-- [ ] Create glowing circuit board animation for the background (with SVG)
+- [x] Create glowing circuit board animation for the background (with SVG)
 - [ ] Create navigation bar
 - [ ] Create angled panels (with clip-path)
 - [ ] Create glowing gradients for text (section headings)

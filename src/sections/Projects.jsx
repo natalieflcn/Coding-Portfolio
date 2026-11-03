@@ -1,3 +1,5 @@
-export default function Projects() {
+function Projects() {
   return <div>This is my Projects.</div>;
 }
+
+export default Projects;

@@ -1,3 +1,5 @@
-export default function Summary() {
-  return <div>This is my summary.</div>;
+function Summary() {
+  return <div>this is the summary</div>;
 }
+
+export default Summary;

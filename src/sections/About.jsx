@@ -14,7 +14,7 @@ function About() {
             web applications because I love bridging the gap between clean code
             and a personalized user experience.
           </p>
-          <p>
+          {/* <p>
             My journey in software development wasn't linear. After graduating
             college, I became a program manager for a non-profit, serving as the
             point of communciation for our web vendors. After a year, I realized
@@ -24,7 +24,7 @@ function About() {
             a unique perspective on user behavior, something, and
             cross-functional communciation, which all translates into how I
             approach code.
-          </p>
+          </p> */}
           <p>
             I'm currently looking for junior software engineering roles and I'm
             open to freelance web projects. Let's connect!

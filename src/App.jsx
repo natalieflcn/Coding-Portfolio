@@ -5,17 +5,24 @@ import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
 import Background from "./components/decorative/Background";
-import Header from "./components/layout/Header";
+import NavBar from "./components/layout/NavBar";
+import Education from "./sections/Education";
+import Employment from "./sections/Employment";
 
 function App() {
   return (
     <>
       <Background />
-      <Header />
-      <div className="flex flex-col gap-5 sm:gap-7 xl:gap-10 self-center mb-10 app-container md:w-1/2">
-        <Headshot />
-        <About />
+      <NavBar />
+
+      <div className="flex flex-col gap-5 sm:gap-7 xl:gap-10 self-center mb-10 md:w-1/2 app-container mt-6 md:mt-30">
+        <div className="flex gap-5">
+          <Headshot />
+          <About />
+        </div>
+        <Education />
         <Projects />
+        <Employment />
         <Skills />
         <Contact />
       </div>

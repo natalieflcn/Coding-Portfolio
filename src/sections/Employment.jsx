@@ -32,25 +32,32 @@ const experience = [
 
 const Job = function ({ item }) {
   return (
-    <div className=" w-full flex flex-row gap-7 not-last:border-b not-last:pb-5 py-1 not-first:pt-5 border-blue-0">
-      <p className="">{item.year}</p>
-      <div className="flex flex-col text-left max-w-[80%]">
-        <div className="flex gap-2">
-          <h3 className="text-lg leading-snug ">{item.company}</h3>
-          <img src={item.logo} className="w-16 h-auto self-center" />
+    <div className=" w-full p-1 xs:p-3 flex flex-col md:flex-row gap-1 lg:gap-7 not-last:border-b not-last:pb-5 py-1 not-first:pt-5 border-blue-0  ">
+      <p className="text-[0.7rem] text-left md:text-sm ">{item.year}</p>
+      <div className="flex flex-col text-left flex-1 ">
+        <div className="flex xs:gap-2">
+          <h3 className=" text-md sm:text-lg md:text-xl leading-snug ">
+            {item.company}
+          </h3>
+          <img
+            src={item.logo}
+            className="w-16 h-auto self-center hidden xs:block"
+          />
         </div>
-        <p className="font-mono font-semibold text-red-200 text-sm">
+        <p className="font-mono font-semibold text-red-200 text-[0.7rem] leading-tight sm:text-xs md:text-sm">
           {item.title}
         </p>
-        <p className="text-xs mt-0.75">{item.sector}</p>
+        <p className="hidden xs:block  md:text-xs mt-0.75">{item.sector}</p>
         <div className="flex flex-col mt-2 gap-2">
           {item.bullets.map((bullet, i) => (
             <div className="flex gap-2" key={i}>
               <img
                 src={hex}
-                className="w-2 h-2 relative top-1.5 drop-shadow-[0_0_2px] drop-shadow-pink-100"
+                className="hidden xs:block w-2 h-2 relative top-1.5 drop-shadow-[0_0_2px] drop-shadow-pink-100"
               />
-              <p className="text-sm">{bullet}</p>
+              <p className="text-[0.7rem]  leading-tight md:text-xs lg:text-sm">
+                {bullet}
+              </p>
             </div>
           ))}
         </div>

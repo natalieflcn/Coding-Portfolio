@@ -7,7 +7,7 @@ const navItems = [
   { title: "Contact", href: "" },
 ];
 
-const NavItem = function (item) {
+const NavItem = function ({ item }) {
   return (
     <p className="font-mono hidden md:block text-xs  lg:text-sm xl:text-md font-semibold hover:cursor-pointer">
       {item.title}
@@ -21,12 +21,10 @@ function NavBar() {
         Natalie Falcon
       </h2>
 
-      {/* For desktop users */}
       {navItems.map((item, i) => (
         <NavItem item={item} key={i} />
       ))}
 
-      {/* For tablet users */}
       <Button variant="red">Disable UI</Button>
     </div>
   );

@@ -165,6 +165,10 @@ body {
   /* width: 1200px; */
   max-width: 70%;
   width: 1200px;
+
+  @media (max-width: 500px) {
+    max-width: 80%;
+  }
 }
 
 /* Circuit Grid Background */

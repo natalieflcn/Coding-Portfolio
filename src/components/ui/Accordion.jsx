@@ -66,14 +66,14 @@ function Accordion({ items }) {
     <div className="flex flex-col items-start ">
       <div className="flex flex-row justify-center text-[0.7rem] sm:text-xs  gap-2 lg:pb-3 w-full lg:gap-5 font-mono ">
         <p
-          className="hover:text-dark-100 transition-colors duration-75"
+          className="hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer"
           onClick={() => handleToggleCategory("all")}
         >
           Expand
         </p>
         |
         <p
-          className="hover:text-dark-100 transition-colors duration-75"
+          className="hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer"
           onClick={() => handleToggleCategory("none")}
         >
           Collapse
@@ -81,7 +81,7 @@ function Accordion({ items }) {
       </div>
       {items.map((item) => (
         <div
-          className="flex flex-col w-full not-last:border-b not-last:border-b-blue-0  hover:bg-dark-100 py-3 px-4 first:mt-2 transtion-bg duration-75"
+          className="flex flex-col w-full not-last:border-b not-last:border-b-blue-0  hover:bg-dark-100 py-3 px-4 first:mt-2 transtion-bg duration-75 hover:cursor-pointer"
           key={item.category}
           onClick={() => handleToggleCategory(item)}
         >

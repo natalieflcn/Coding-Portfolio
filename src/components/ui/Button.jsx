@@ -22,7 +22,7 @@ const variants = {
 function Button({ variant = "red", className, children }) {
   return (
     <button
-      className={`${variants[variant]} ${className} font-mono font-bold px-2 py-1 text-xs lg:text-sm uppercase rounded-xs transition-colors duration-75`}
+      className={`${variants[variant]} ${className} font-mono font-bold px-2 py-1 text-xs lg:text-sm uppercase rounded-xs transition-colors duration-75 hover:cursor-pointer`}
     >
       {children}{" "}
     </button>

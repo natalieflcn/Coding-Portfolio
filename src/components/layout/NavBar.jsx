@@ -9,7 +9,7 @@ const navItems = [
 
 const NavItem = function (item) {
   return (
-    <p className="font-mono hidden md:block text-xs  lg:text-sm xl:text-md font-semibold">
+    <p className="font-mono hidden md:block text-xs  lg:text-sm xl:text-md font-semibold hover:cursor-pointer">
       {item.title}
     </p>
   );

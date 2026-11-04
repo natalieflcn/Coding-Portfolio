@@ -6,7 +6,7 @@ import { IoIosDownload } from "react-icons/io";
 
 const LinkItem = function ({ children }) {
   return (
-    <div className="flex sm:gap-15 lg:gap-30 justify-center items-center not-last:border-b border-blue-0 px-4 pb-4">
+    <div className="flex sm:gap-15 justify-center items-center not-last:border-b border-blue-0 px-4 pb-4 ">
       {children}
     </div>
   );
@@ -32,46 +32,51 @@ function Contact() {
             size={40}
             fill="var(--color-pink-300)"
           />
-          <ContactButton variant="blue" className="button-shimmer-linkedin">
-            <a
-              href="https://www.linkedin.com/in/natalieflcn/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <a
+            href="https://www.linkedin.com/in/natalieflcn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-[50%] hover:cursor-pointer"
+          >
+            <ContactButton variant="blue" className="button-shimmer-linkedin">
               Connect with me on Linkedin
-            </a>
-          </ContactButton>
+            </ContactButton>
+          </a>
         </LinkItem>
+
         <LinkItem>
           <FaGithub
             className="hidden sm:block "
             size={40}
             fill="var(--color-pink-300)"
           />
-          <ContactButton variant="purple" className="button-shimmer-github">
-            <a
-              href="https://github.com/natalieflcn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <a
+            href="https://github.com/natalieflcn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-[50%] hover:cursor-pointer"
+          >
+            <ContactButton variant="purple" className="button-shimmer-github">
               View my GitHub profile
-            </a>
-          </ContactButton>
+            </ContactButton>
+          </a>
         </LinkItem>
+
         <LinkItem>
           <IoIosDownload
             className="hidden sm:block "
             size={40}
             fill="var(--color-pink-300)"
           />
-          <ContactButton variant="red" className="button-shimmer-download">
-            <a
-              href="/public/images/resume.png"
-              download="Natalie_Falcon_Resume"
-            >
+          <a
+            href="/images/resume.png"
+            download="Natalie_Falcon_Resume"
+            className="w-full max-w-[50%] hover:cursor-pointer"
+          >
+            <ContactButton variant="red" className="button-shimmer-download">
               Download CV/Resume
-            </a>
-          </ContactButton>
+            </ContactButton>
+          </a>
         </LinkItem>
       </div>
     </Panel>

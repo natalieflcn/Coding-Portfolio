@@ -312,6 +312,9 @@ body {
   border-radius: 3px;
   padding: 1rem;
   background-color: rgba(12, 7, 19, 0.7);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* A cyan hue added to the rim of the panel */
@@ -327,6 +330,9 @@ body {
   --k: 0.3; /* accounting for diagonal shift per inset pixel */
   filter: drop-shadow(0 0 5px rgba(64, 253, 255, 0.45));
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 640px) {
     --tab-height: 40px;
@@ -347,6 +353,7 @@ body {
     var(--color-blue-300),
     var(--color-blue-100)
   );
+  flex: 1;
   margin-top: 0.25rem;
 }
 

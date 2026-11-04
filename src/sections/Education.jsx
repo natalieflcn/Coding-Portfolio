@@ -40,8 +40,11 @@ const Certificate = function ({ item }) {
       <p className="text-[0.7rem]">Udemy</p>
       <p className="text-[0.7rem]">{`Issued ${item.date}`}</p>
       <div className="flex gap-2 mt-1">
-        {item.skills.map((skill) => (
-          <span className="font-mono text-red-200 text-[0.7rem] border-red-100 border px-1.5 py-0.5 rounded-lg">
+        {item.skills.map((skill, i) => (
+          <span
+            className="font-mono text-red-200 text-[0.7rem] border-red-100 border px-1.5 py-0.5 rounded-lg"
+            key={i}
+          >
             {skill}
           </span>
         ))}
@@ -63,8 +66,11 @@ function Education() {
           </p>
           <p className="text-sm">Lehman CUNY College | NY, USA</p>
           <div className="flex flex-wrap gap-2 mt-1.5 gap-y-1.5 leading-relaxed">
-            {courses.map((course) => (
-              <span className="font-mono text-red-200 text-[0.7rem] border-red-100 border px-1.5  rounded-lg">
+            {courses.map((course, i) => (
+              <span
+                className="font-mono text-red-200 text-[0.7rem] border-red-100 border px-1.5  rounded-lg"
+                key={i}
+              >
                 {course}
               </span>
             ))}
@@ -72,8 +78,8 @@ function Education() {
         </div>
         <div className="flex flex-col px-3 gap-1">
           <h3 className="font-heading text-blue-100  text-lg">Certificates</h3>
-          {certificates.map((item) => (
-            <Certificate item={item} />
+          {certificates.map((item, i) => (
+            <Certificate item={item} key={i} />
           ))}
         </div>
       </div>

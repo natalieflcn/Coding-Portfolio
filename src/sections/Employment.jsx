@@ -44,8 +44,8 @@ const Job = function ({ item }) {
         </p>
         <p className="text-xs mt-0.75">{item.sector}</p>
         <div className="flex flex-col mt-2 gap-2">
-          {item.bullets.map((bullet) => (
-            <div className="flex gap-2">
+          {item.bullets.map((bullet, i) => (
+            <div className="flex gap-2" key={i}>
               <img
                 src={hex}
                 className="w-2 h-2 relative top-1.5 drop-shadow-[0_0_2px] drop-shadow-pink-100"
@@ -62,8 +62,8 @@ const Job = function ({ item }) {
 function Employment() {
   return (
     <Panel title="Employment">
-      {experience.map((item) => (
-        <Job item={item} />
+      {experience.map((item, i) => (
+        <Job item={item} key={i} />
       ))}
     </Panel>
   );

@@ -38,15 +38,15 @@ function Panel({ title, showTab = true, className, children }) {
 
   return (
     <div className={`panel-outline min-w-0 ${className}`}>
-      <div ref={panelGlowRef} className="panel-glow">
+      <div ref={panelGlowRef} className="panel-glow ">
         <span
           ref={titleRef}
           className="panel-title text-xl xs:text-2xl sm:text-3xl lg:text-4xl"
         >
           {title}
         </span>
-        <div className="panel">
-          <div className="panel-inner ">{children}</div>
+        <div className="panel ">
+          <div className="panel-inner">{children}</div>
         </div>
       </div>
     </div>

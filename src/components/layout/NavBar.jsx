@@ -22,7 +22,9 @@ function NavBar() {
       </h2>
 
       {/* For desktop users */}
-      {navItems.map((item) => NavItem(item))}
+      {navItems.map((item, i) => (
+        <NavItem item={item} key={i} />
+      ))}
 
       {/* For tablet users */}
       <Button variant="red">Disable UI</Button>

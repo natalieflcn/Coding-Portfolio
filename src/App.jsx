@@ -1,5 +1,5 @@
 import "./App.css";
-import Summary from "./sections/Summary";
+import Headshot from "./sections/Headshot";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
@@ -13,7 +13,7 @@ function App() {
       <Background />
       <Header />
       <div className="flex flex-col gap-5 sm:gap-7 xl:gap-10 self-center mb-10 app-container md:w-1/2">
-        <Summary />
+        <Headshot />
         <About />
         <Projects />
         <Skills />

@@ -12,10 +12,12 @@
 
 - [ ] Wrap flicker, glitch, and scan animations in @media (prefers-reduced-motion: reduce) { \* { animation: none !important; } }
 
+- [ ] Compress and trim videos in Projects section
+- [ ] Put Summary & About panels in one row
 - [ ] Add a magenta trailing cursor
-- [ ] Create Sidebar that allows users to navigate between panels
+- [ ] Scanlines over Summary panel
+- [ ] Glitch effect for Contact section
+- [ ] Create hexagonal Sidebar that allows users to navigate between panels
 - [ ] Emphasize active panels
   - [ ] Shimmer animation on panel title
-  - [ ] Glitch effect for text (section headings in Sidebar)
-  - [ ] Scanlines over active panel
   - [ ] Pink border animation along the width of panels, similar to Sombra's holographic panels

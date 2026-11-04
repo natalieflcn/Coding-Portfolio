@@ -2,7 +2,7 @@ import Panel from "../components/layout/Panel";
 
 function About() {
   return (
-    <div>
+    <div className=" flex h-full">
       <Panel title="About">
         <div className="flex flex-col items-center justify-self-center gap-5 p-3 text-center text-[0.7rem] leading-snug sm:text-xs lg:text-sm lg:w-[85%]">
           <p className="text-sm sm:text-md lg:text-lg font-bold sm:pt-0">

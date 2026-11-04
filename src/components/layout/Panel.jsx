@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-function Panel({ title, children }) {
+function Panel({ title, showTab = true, className, children }) {
   const panelGlowRef = useRef(null);
   const titleRef = useRef(null);
 
@@ -9,6 +9,14 @@ function Panel({ title, children }) {
     const panelTitle = titleRef.current;
 
     if (!panelGlow || !panelTitle) return;
+
+    // disable tab width
+    if (!showTab) {
+      panelGlow.style.setProperty("--tab-width", "0px");
+      panelGlow.style.setProperty("--tab-height", "0px");
+
+      return;
+    }
 
     const updateTabWidth = function () {
       // measures elements' dimensions and position on the screen (returns element's width)
@@ -29,11 +37,11 @@ function Panel({ title, children }) {
   }, [title]);
 
   return (
-    <div className="panel-outline min-w-0">
+    <div className={`panel-outline min-w-0 ${className}`}>
       <div ref={panelGlowRef} className="panel-glow">
         <span
           ref={titleRef}
-          className="panel-title  text-xl xs:text-2xl sm:text-3xl lg:text-4xl"
+          className="panel-title text-xl xs:text-2xl sm:text-3xl lg:text-4xl"
         >
           {title}
         </span>

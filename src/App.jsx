@@ -15,8 +15,8 @@ function App() {
       <Background />
       <NavBar />
 
-      <div className="flex flex-col gap-5 sm:gap-7 xl:gap-10 self-center mb-10 md:w-1/2 app-container mt-6 md:mt-30">
-        <div className="flex gap-5">
+      <div className="flex flex-col gap-5 sm:gap-7 xl:gap-10 self-center mb-10 md:w-1/2 app-container mt-6 md:mt-30 items-stretch">
+        <div className="flex gap-5 items-stretch h-full">
           <Headshot />
           <About />
         </div>

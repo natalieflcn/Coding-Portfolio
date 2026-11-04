@@ -5,7 +5,7 @@ function About() {
     <div>
       <Panel title="About">
         <div className="flex flex-col items-center justify-self-center gap-5 p-3 text-center text-[0.7rem] leading-snug sm:text-xs lg:text-sm lg:w-[85%]">
-          <p className="text-sm sm:text-md lg:text-lg font-bold">
+          <p className="text-sm sm:text-md lg:text-lg font-bold sm:pt-0">
             Hey, I'm Natalie. Welcome to my website!
           </p>
           <p>

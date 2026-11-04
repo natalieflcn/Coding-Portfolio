@@ -435,3 +435,12 @@ body {
     left: 1.5rem;
   } */
 }
+
+.headshot-frame {
+  background: linear-gradient(
+    140deg,
+    var(--color-blue-300),
+    var(--color-blue-100)
+  );
+  border-radius: 2px;
+}

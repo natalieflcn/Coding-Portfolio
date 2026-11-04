@@ -37,8 +37,8 @@ function Panel({ title, children }) {
         >
           {title}
         </span>
-        <div className={`panel `}>
-          <div className="panel-inner">{children}</div>
+        <div className="panel">
+          <div className="panel-inner ">{children}</div>
         </div>
       </div>
     </div>

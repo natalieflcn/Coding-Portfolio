@@ -1,6 +1,12 @@
 import Panel from "../components/layout/Panel";
 import Accordion from "../components/ui/Accordion";
 
+// Level 1 - Novice
+// Level 2 - Intermediate
+// Level 3 - Proficient
+// Level 4 - Advanced
+// Level 5 - Expert
+
 const skills = [
   {
     category: "Languages",
@@ -50,6 +56,7 @@ const skills = [
       { name: "VS Code", level: 2 },
       { name: "GitHub", level: 1 },
       { name: "Procreate", level: 1 },
+      { name: "Canva", level: 1 },
       { name: "Figma", level: 1 },
     ],
   },

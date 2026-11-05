@@ -20,8 +20,6 @@
 }
 
 @theme {
-  /* CUSTOM VARIABLES */
-
   /* Color Palette */
   --color-pink-100: #e9abf8;
   --color-pink-200: #ec74f9;
@@ -69,10 +67,6 @@
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrainsMono", monospace;
 
-  /* Animations */
-  --animate-flicker: flicker 4s infinite;
-  --animate-scan: scan 6s linear infinite;
-
   --breakpoint-xs: 450px;
 }
 
@@ -111,7 +105,6 @@ body {
 }
 
 .app-container {
-  /* width: 1200px; */
   max-width: 70%;
   width: 1200px;
 
@@ -121,10 +114,6 @@ body {
 }
 
 /* Circuit Grid Background */
-.circuit-pulse {
-  /* filter: drop-shadow(0 0 1px var(--color-pink-100)); */
-}
-
 .circuit-pulse path[fill] {
   stroke-width: 1;
   stroke: var(--color-pink-100);
@@ -139,7 +128,7 @@ body {
 .circuit-pulse path[stroke] {
   stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 20 80; /* 6% lit, 94% gap = 100 total */
+  stroke-dasharray: 20 80;
   animation: circuit-travel var(--duration, 6s) linear var(--delay, 0s) infinite;
 
   @media (prefers-reduced-motion: reduce) {
@@ -157,36 +146,7 @@ body {
   }
 }
 
-/* Glow and Shimmer Effects */
-
-.text-glow {
-  color: var(--color-light-100);
-  animation: text-glow 5s ease-in-out infinite;
-}
-
-@keyframes text-glow {
-  0% {
-    /* Subtle, tight glow */
-    text-shadow:
-      0 0 4px #fff,
-      0 0 10px var(--color-pink-300),
-      0 0 15px var(--color-pink-300);
-  }
-  50% {
-    /* Expanded, intense glow */
-    text-shadow:
-      0 0 10px #fff,
-      0 0 20px var(--color-pink-300),
-      0 0 25px var(--color-pink-300),
-      0 0 30px var(--color-pink-300);
-  }
-  100% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 10px var(--color-pink-300),
-      0 0 15px var(--color-pink-300);
-  }
-}
+/* Sombra Effects */
 
 .text-shimmer {
   color: transparent;
@@ -207,15 +167,6 @@ body {
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 100% center;
-  }
-  100% {
-    background-position: -100% center;
   }
 }
 
@@ -273,7 +224,15 @@ body {
   }
 }
 
-/* Scan and Glitch Effects */
+@keyframes shimmer {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: -100% center;
+  }
+}
+
 .scan-sweep {
   background-image: linear-gradient(
     100deg,
@@ -299,7 +258,7 @@ body {
   }
 }
 
-/* Panel Designs */
+/* Sombra Panel Designs */
 
 /* The magenta, rectangular outline around the panel */
 .panel-outline {
@@ -417,6 +376,7 @@ body {
   }
 }
 
+/* Inside of the panel where content actually sits */
 .panel-inner-background {
   background:
     repeating-linear-gradient(
@@ -427,27 +387,25 @@ body {
     var(--color-dark-200);
 }
 
-/* .panel-sweep .panel-inner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: linear-gradient(
-    100deg,
-    transparent 45%,
-    rgba(64, 253, 255, 0.35) 50%,
-    transparent 55%
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  opacity: 0.7;
-  /* animation: sweep 3s ease-in infinite; */
-/* 
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  } 
-} */
+/* Panel title that sits in the lowered tab area */
+.panel-title {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  color: var(--color-light-100);
+  text-shadow: 0 0 4px var(--color-pink-100);
 
+  @media (min-width: 640px) {
+    position: absolute;
+    top: calc((var(--tab-height) / 2));
+    left: 0;
+    z-index: 3;
+    transform: translateY(-70%);
+  }
+}
+
+/* Panel scanning animation for Headshot */
 .panel-scan .panel-inner::before {
   content: "";
   position: absolute;
@@ -480,25 +438,7 @@ body {
   }
 }
 
-/* Panel title that sits in the lowered tab area */
-.panel-title {
-  position: relative;
-  display: inline-block;
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  color: var(--color-light-100);
-  text-shadow: 0 0 4px var(--color-pink-100);
-
-  @media (min-width: 640px) {
-    position: absolute;
-    top: calc((var(--tab-height) / 2));
-    left: 0;
-    z-index: 3;
-    transform: translateY(-70%);
-  }
-}
-
-/* Miscellaneous */
+/* Miscellaneous Classes */
 
 .frame-blue-gradient {
   background: linear-gradient(
@@ -529,6 +469,7 @@ body {
 }
 
 /* ---------- Corporate mode ---------- */
+/* Disabling general panel designs and animations */
 [data-mode="corporate"] [data-mode="corporate"] .panel-glow,
 [data-mode="corporate"] .panel-outline {
   filter: none;
@@ -569,12 +510,14 @@ body {
 }
 
 [data-mode="corporate"] .panel-title {
-  /* position: relative; */
-  /* bottom: 2px; */
   @media (min-width: 640px) {
     margin-top: 10px;
     margin-left: 9px;
   }
+}
+
+[data-mode="corporate"] .panel-scan .panel-inner::before {
+  animation: none;
 }
 
 [data-mode="corporate"] .frame-blue-gradient {
@@ -585,16 +528,27 @@ body {
   );
 }
 
-[data-mode="corporate"] .panel-scan .panel-inner::before {
-  animation: none;
+/* Restyling miscellaneous items */
+[data-mode="corporate"] .app-container {
+  @media (max-width: 500px) {
+    max-width: 90%;
+  }
 }
 
+[data-mode="corporate"] .button-shimmer-red,
+[data-mode="corporate"] .button-shimmer-linkedin,
+[data-mode="corporate"] .button-shimmer-purple {
+  box-shadow: none;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Restyling individual panels */
 [data-mode="corporate"] #projects {
   color: var(--color-dark-300);
 
   h3 {
-    /* color: var(--color-dark-200); */
-
     &:hover {
       color: var(--color-dark-100);
       text-shadow: none;
@@ -639,20 +593,5 @@ body {
 [data-mode="corporate"] #employment {
   div {
     border-color: var(--color-red-200);
-  }
-}
-
-[data-mode="corporate"] .app-container {
-  @media (max-width: 500px) {
-    max-width: 90%;
-  }
-}
-
-[data-mode="corporate"] .button-shimmer-red,
-[data-mode="corporate"] .button-shimmer-linkedin,
-[data-mode="corporate"] .button-shimmer-purple {
-  box-shadow: none;
-  &:hover {
-    opacity: 0.7;
   }
 }

@@ -28,6 +28,8 @@ function Contact() {
   const { sombraMode } = useSombraMode();
 
   function playAudio() {
+    if (!sombraMode) return;
+
     const audio = new Audio(sombraHack);
     audio.volume = 0.7;
     audio.play();

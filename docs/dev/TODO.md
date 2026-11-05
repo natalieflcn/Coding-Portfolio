@@ -21,8 +21,8 @@
   - [x] Highlight active nav item
 - [x] Add typing animation to 'Hey, I'm Natalie...'
 - [x] Add a magenta trailing cursor
-- [ ] Add Sombra sound bytes
-  - [ ] 'BOOP!' to switching to Corporate Mode
-  - [ ] 'I thought this was supposed to be...' to Download CV/Resume
-  - [ ] 'Sombra Online' to switching to Sombra mode
+- [x] Add Sombra sound bytes
+  - [x] 'BOOP!' to switching to Corporate Mode
+  - [x] Sombra hack sound byte to Download CV/Resume
+  - [x] 'Sombra Online' to switching to Sombra mode
 - [ ] Organize CSS file TODO

@@ -1,39 +1,60 @@
 import Panel from "../components/layout/Panel";
-import Headshot from "./Headshot";
+
+import { useEffect, useState } from "react";
+
+const Typewriter = function () {
+  const [count, setCount] = useState(0);
+  const sentence = "Hey, I'm Natalie. Welcome to my website!";
+
+  useEffect(() => {
+    if (count >= sentence.length) return;
+
+    const id = setTimeout(() => setCount((prev) => prev + 1), 60);
+
+    return () => clearTimeout(id);
+  }, [count, sentence]);
+
+  return (
+    <p className="text-left self-start font-mono tracking-wide text-sm sm:text-base lg:text-lg font-bold">
+      <span>{sentence.slice(0, count)}</span>
+      <span className="cursor" />
+
+      {/* holds space for not yet typed text, preventing content from jumping */}
+      <span className="invisible ">{sentence.slice(count)}</span>
+    </p>
+  );
+};
 
 function About() {
   return (
     <Panel title="About" className="h-full">
-      {/* <Headshot /> */}
-      <div className="flex flex-col items-center justify-self-center gap-5 p-3 text-center text-[0.7rem] leading-snug sm:text-xs lg:text-sm ">
-        <p className="text-sm sm:text-md lg:text-lg font-bold sm:pt-0">
-          Hey, I'm Natalie. Welcome to my website!
+      <div className="flex flex-col items-center justify-self-center gap-2 xs:gap-5 p-3 text-left text-[0.7rem] leading-snug sm:text-xs lg:text-sm ">
+        <Typewriter />
+
+        <p>
+          I'm a passionate full-stack developer who loves transforming an
+          artistic vision into a memorable user experience.
         </p>
         <p>
-          I'm a passionate fullstack developer with a B.S. in Computer Science.
-          I've been honing my skills to build interactive, dynamic web
-          applications because I love bridging the gap between clean code and a
-          personalized user experience.
+          My journey into programming wasn't linear. After college, I worked as
+          a program manager for a non-profit, serving as the point of contact
+          for our web vendors. But I realized I didn't want to just direct how
+          websites were built, I wanted to create them... I transitioned back
+          into programming and haven't stopped since. That background gives me a
+          strong sense of user behavior and cross-functional communciation, and
+          it shapes how I approach code.
         </p>
-        {/* <p>
-            My journey in software development wasn't linear. After graduating
-            college, I became a program manager for a non-profit, serving as the
-            point of communciation for our web vendors. After a year, I realized
-            I didn't want to direct how websites should be constructed, I wanted
-            to build those digital experiences. I transitioned back into
-            programming and have been coding ever since. My background gives me
-            a unique perspective on user behavior, something, and
-            cross-functional communciation, which all translates into how I
-            approach code.
-          </p> */}
         <p>
           I'm currently looking for junior software engineering roles and I'm
           open to freelance web projects. Let's connect!
         </p>
         <p>
-          When I'm not coding, you can find me making art, playing pool (badly),
-          or reminiscing about Overwatch (this website was inspired by Sombra's
-          character design).
+          Outside of code, I make art, play pool (badly), and reminisce about
+          Overwatch.{" "}
+          <italic className="italic">
+            Sombra Mode was inspired by Sombra's character design - check it
+            out!
+          </italic>
         </p>
       </div>
     </Panel>

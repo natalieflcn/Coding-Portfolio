@@ -65,7 +65,7 @@ const skills = [
 function Skills() {
   return (
     <div>
-      <Panel title="Skills">
+      <Panel title="Skills" id="skills">
         <Accordion items={skills} />
       </Panel>
     </div>

@@ -12,18 +12,17 @@
 
 - [ ] Wrap flicker, glitch, and scan animations in @media (prefers-reduced-motion: reduce) { \* { animation: none !important; } }
 
-- [ ] Make panels responsive
-  - [ ] Education panel
-  - [ ] Employment panel
+- [x] Make panels responsive
+  - [x] Education panel
+  - [x] Employment panel
 - [ ] Edit content
   - [ ] Edit job descriptions
   - [ ] Edit About section
 - [x] Compress and trim videos in Projects section
 - [x] Put Summary & About panels in one row
 - [ ] Add a magenta trailing cursor
-- [ ] Scanlines over Headshot
-- [ ] Glitch effect for Contact section
-- [ ] Add functionality to NavBar
-- [ ] Emphasize active panels
-  - [ ] Shimmer title on panel title, highlight active nav item
-- [ ] Add typing animation to 'Hey, I'm Natalie...'å
+- [x] Scanlines over Headshot
+- [x] Add functionality to NavBar
+  - [x] Highlight active nav item
+- [x] Add typing animation to 'Hey, I'm Natalie...'
+- [ ] Organize CSS file

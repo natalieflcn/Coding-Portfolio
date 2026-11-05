@@ -1,6 +1,6 @@
 import Panel from "../components/layout/Panel";
-import reserve from "../assets/images/reserve-logo.png";
-import benevolent from "../assets/images/benevolent-logo.png";
+import reserve from "../assets/images/reserve-logo.webp";
+import benevolent from "../assets/images/benevolent-logo.webp";
 import hex from "../assets/images/hex-full.png";
 
 const experience = [
@@ -32,11 +32,11 @@ const experience = [
 
 const Job = function ({ item }) {
   return (
-    <div className=" w-full p-1 xs:p-3 flex flex-col md:flex-row gap-1 lg:gap-7 not-last:border-b not-last:pb-5 py-1 not-first:pt-5 border-blue-0  ">
+    <div className=" w-full p-2 xs:p-3 flex flex-col md:flex-row gap-1 lg:gap-7 not-last:border-b not-last:pb-5  not-first:pt-5 border-blue-0  ">
       <p className="text-[0.7rem] text-left md:text-sm ">{item.year}</p>
       <div className="flex flex-col text-left flex-1 ">
         <div className="flex xs:gap-2">
-          <h3 className=" text-md sm:text-lg md:text-xl leading-snug ">
+          <h3 className=" text-base sm:text-lg md:text-xl leading-snug ">
             {item.company}
           </h3>
           <img
@@ -53,7 +53,7 @@ const Job = function ({ item }) {
             <div className="flex gap-2" key={i}>
               <img
                 src={hex}
-                className="hidden xs:block w-2 h-2 relative top-1.5 drop-shadow-[0_0_2px] drop-shadow-pink-100"
+                className="hidden xs:block w-2 h-2 relative top-1.5 "
               />
               <p className="text-[0.7rem]  leading-tight md:text-xs lg:text-sm">
                 {bullet}

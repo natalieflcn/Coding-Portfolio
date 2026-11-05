@@ -24,9 +24,16 @@ function App() {
             <About />
           </div>
         </div>
-        <Education />
-        <Projects />
-        <Employment />
+
+        <section
+          id="experience"
+          className="scroll-mt-24 flex flex-col gap-5 sm:gap-7 xl:gap-10"
+        >
+          <Projects />
+          <Education />
+          <Employment />
+        </section>
+
         <Skills />
         <Contact />
       </div>

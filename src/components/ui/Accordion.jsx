@@ -33,11 +33,7 @@ const SubItem = function ({ subItem }) {
       <div className="flex gap-1.25 lg:gap-1.5">
         {Array.from({ length: 5 }, (_, index) =>
           index < subItem.level ? (
-            <img
-              src={hexFull}
-              className="w-4 lg:w-5 drop-shadow-[0_0_3px] drop-shadow-pink-100"
-              key={index}
-            />
+            <img src={hexFull} className="w-4 lg:w-5 " key={index} />
           ) : (
             <img src={hexEmpty} className="w-4  lg:w-5" key={index} />
           ),
@@ -64,7 +60,7 @@ function Accordion({ items }) {
 
   return (
     <div className="flex flex-col items-start ">
-      <div className="flex flex-row justify-center text-[0.7rem] sm:text-xs  gap-2 lg:pb-3 w-full lg:gap-5 font-mono ">
+      <div className="flex flex-row pt-3  sm:pt-0 justify-center text-[0.7rem] sm:text-xs  gap-1 xs:gap-2 lg:pb-3 w-full lg:gap-5 font-mono ">
         <p
           className="hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer"
           onClick={() => handleToggleCategory("all")}
@@ -86,7 +82,7 @@ function Accordion({ items }) {
           onClick={() => handleToggleCategory(item)}
         >
           <div className="flex w-full justify-between items-center text-left gap-1">
-            <strong className="text-xs xs:text-sm lg:text-md">
+            <strong className="text-xs xs:text-sm lg:text-base">
               {item.category}
             </strong>
             {openCategories &&

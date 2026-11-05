@@ -69,32 +69,6 @@
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrainsMono", monospace;
 
-  /* Keyframes */
-  @keyframes flicker {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    92% {
-      opacity: 1;
-    }
-    93% {
-      opacity: 0.4;
-    }
-    95% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes scan {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(100vh);
-    }
-  }
-
   /* Animations */
   --animate-flicker: flicker 4s infinite;
   --animate-scan: scan 6s linear infinite;
@@ -119,31 +93,6 @@
   h2 {
     font-family: var(--font-heading);
   }
-  /* 
-  h1 {
-    font-size: 50px;
-    letter-spacing: -1.68px;
-    margin: 32px 0;
-
-    @media (max-width: 1024px) {
-      font-size: 36px;
-      margin: 20px 0;
-    }
-  }
-
-  h2 {
-    font-size: 24px;
-    line-height: 118%;
-    margin: 0 0 8px;
-
-    @media (max-width: 1024px) {
-      font-size: 20px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  } */
 }
 
 body {
@@ -179,8 +128,12 @@ body {
 .circuit-pulse path[fill] {
   stroke-width: 1;
   stroke: var(--color-pink-100);
-  stroke-opacity: 0.4;
+  /* stroke-opacity: 0.4; */
   animation: flicker var(--duration, 100s) var(--delay, 0s) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 .circuit-pulse path[stroke] {
@@ -188,6 +141,10 @@ body {
   stroke-linecap: round;
   stroke-dasharray: 20 80; /* 6% lit, 94% gap = 100 total */
   animation: circuit-travel var(--duration, 6s) linear var(--delay, 0s) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
   /* filter: drop-shadow(0 0 4px var(--color-pink-100)); */
 }
 
@@ -276,6 +233,10 @@ body {
   );
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 .button-shimmer-github {
@@ -290,9 +251,13 @@ body {
   );
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
-.button-shimmer-download {
+.button-shimmer-red {
   background: linear-gradient(
     90deg,
     var(--color-red-200) 0%,
@@ -304,6 +269,36 @@ body {
   );
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Scan and Glitch Effects */
+.scan-sweep {
+  background-image: linear-gradient(
+    100deg,
+    transparent 40%,
+    rgba(64, 253, 255, 0.45) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%; /* gradient is 2.5x wider than the element */
+  background-repeat: no-repeat;
+  animation: sweep 3s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes sweep {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
 }
 
 /* Panel Designs */
@@ -312,7 +307,7 @@ body {
 .panel-outline {
   border: 8px solid var(--color-pink-300);
   box-shadow: 0 0 8px rgba(250, 189, 246, 0.7);
-  filter: drop-shadow(0 0 11px rgba(103, 12, 131, 0.45));
+  /* filter: drop-shadow(0 0 11px rgba(103, 12, 131, 0.45)); */
   border-radius: 3px;
   padding: 1rem;
   background-color: rgba(12, 7, 19, 0.7);
@@ -332,7 +327,7 @@ body {
   ); /* horizontal run of the diagonal */
   --inset: 0px; /* this layer's inset (how far to shrink the layer) */
   --k: 0.3; /* accounting for diagonal shift per inset pixel */
-  filter: drop-shadow(0 0 5px rgba(64, 253, 255, 0.45));
+  /* filter: drop-shadow(0 0 5px rgba(64, 253, 255, 0.45)); */
   position: relative;
   height: 100%;
   display: flex;
@@ -434,6 +429,59 @@ body {
     var(--color-dark-200);
 }
 
+/* .panel-sweep .panel-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    100deg,
+    transparent 45%,
+    rgba(64, 253, 255, 0.35) 50%,
+    transparent 55%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  /* animation: sweep 3s ease-in infinite; */
+/* 
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  } 
+} */
+
+.panel-scan .panel-inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  pointer-events: none;
+  /* opacity: 0.7; */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-blue-0),
+    transparent
+  );
+  animation: scan-down 3s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    background: none;
+    animation: none;
+  }
+}
+
+@keyframes scan-down {
+  from {
+    top: 0%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
 /* Panel title that sits in the lowered tab area */
 .panel-title {
   position: relative;
@@ -463,5 +511,17 @@ body {
   border-radius: 2px;
 }
 
-.rotating-hex {
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.5rem;
+  vertical-align: text-bottom;
+  background: currentColor;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

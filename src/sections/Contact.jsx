@@ -24,8 +24,8 @@ const ContactButton = function ({ variant, className, children }) {
 };
 function Contact() {
   return (
-    <Panel title="Contact">
-      <div className="flex flex-col gap-5 pt-5">
+    <Panel title="Contact" id="contact">
+      <div className="flex flex-col gap-5 pt-5 ">
         <LinkItem>
           <IoLogoLinkedin
             className="hidden sm:block "
@@ -36,7 +36,7 @@ function Contact() {
             href="https://www.linkedin.com/in/natalieflcn/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full max-w-[50%] hover:cursor-pointer"
+            className="w-full sm:max-w-[50%] hover:cursor-pointer"
           >
             <ContactButton variant="blue" className="button-shimmer-linkedin">
               Connect with me on Linkedin
@@ -54,7 +54,7 @@ function Contact() {
             href="https://github.com/natalieflcn"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full max-w-[50%] hover:cursor-pointer"
+            className="w-full  sm:max-w-[50%] hover:cursor-pointer"
           >
             <ContactButton variant="purple" className="button-shimmer-github">
               View my GitHub profile
@@ -71,9 +71,9 @@ function Contact() {
           <a
             href="/images/resume.png"
             download="Natalie_Falcon_Resume"
-            className="w-full max-w-[50%] hover:cursor-pointer"
+            className="w-full sm:max-w-[50%] hover:cursor-pointer"
           >
-            <ContactButton variant="red" className="button-shimmer-download">
+            <ContactButton variant="red" className="button-shimmer-red ">
               Download CV/Resume
             </ContactButton>
           </a>

@@ -18,7 +18,7 @@ function Background() {
     // Defining pulse properties on path[stroke]
     strokePaths.forEach((path) => {
       path.setAttribute("pathLength", "100");
-      const activePulse = Math.random() < 0.35;
+      const activePulse = Math.random() < 0.3;
       path.style.display = activePulse ? "" : "none";
       path.style.setProperty("--duration", `${3 + Math.random() * 6}s`);
       path.style.setProperty("--delay", `${-Math.random() * 8}s`);
@@ -28,7 +28,7 @@ function Background() {
 
     // Defining animation properties for fill paths
     fillPaths.forEach((path) => {
-      const activeFlicker = Math.random() < 0.35;
+      const activeFlicker = Math.random() < 0.25;
       path.style.display = activeFlicker ? "" : "none";
       path.style.setProperty("--duration", `${3 + Math.random() * 10}s`);
       path.style.setProperty("--delay", `${-Math.random() * 4}s`);

@@ -22,7 +22,7 @@ const projects = [
 ];
 const Project = function ({ project }) {
   return (
-    <div className="flex w-full p-1 pt-3 ">
+    <div className="flex w-full text-start p-2 pt-3 ">
       <div className="flex flex-col gap-2 lg:flex-row lg:gap-5">
         <a href={project.link} className="lg:w-[50%]  w-full shrink-0">
           <video
@@ -30,20 +30,20 @@ const Project = function ({ project }) {
             loop
             muted
             src={project.video}
-            className="border-2 border-blue-0 w-full  "
+            className="border-2 border-blue-0 w-full"
           />
         </a>
 
-        <div className="flex flex-col gap-2 text-center lg:text-start lg:gap-1">
+        <div className="flex flex-col gap-2  lg:text-start lg:gap-1">
           <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <h3 className="font-heading text-sm xs:text-md sm:text-lg lg:text-xl xl:text-2xl hover:text-blue-0 hover:text-shadow-blue-100 hover:text-shadow-[0_0_4px_--color-light-100] active:text-blue-0 active:text-shadow-blue-100 active:text-shadow-[0_0_4px_--color-light-100] ">
+            <h3 className="font-heading text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl hover:text-blue-0 hover:text-shadow-blue-100 hover:text-shadow-[0_0_4px_--color-light-100] active:text-blue-0 active:text-shadow-blue-100 active:text-shadow-[0_0_4px_--color-light-100] ">
               {project.title}
             </h3>
           </a>
-          <div className="flex flex-wrap justify-center lg:justify-start gap-1 lg:gap-3 lg:text-start">
+          <div className="flex flex-wrap lg:justify-start gap-1 sm:gap-3 lg:text-start">
             {project.techStack.map((language, i) => (
-              <span key={i} className="flex gap-3">
-                <strong className="font-mono text-red-200 text-[0.7rem] md:text-xs xl:text-sm">
+              <span key={i} className="flex   gap-2 xs:gap-3">
+                <strong className="font-mono text-red-200 text-[0.5rem] md:text-xs xl:text-sm">
                   {language}
                 </strong>
                 <strong>{i !== project.techStack.length - 1 && "|"} </strong>
@@ -61,7 +61,7 @@ const Project = function ({ project }) {
 function Projects() {
   return (
     <Panel title="Projects">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2 xs:gap-5">
         {projects.map((project, i) => (
           <Project project={project} key={i} />
         ))}

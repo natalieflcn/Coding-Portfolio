@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-function Panel({ title, showTab = true, className, children }) {
+function Panel({ title, showTab = true, className, children, id }) {
   const panelGlowRef = useRef(null);
   const titleRef = useRef(null);
 
@@ -37,7 +37,7 @@ function Panel({ title, showTab = true, className, children }) {
   }, [title]);
 
   return (
-    <div className={`panel-outline min-w-0 ${className}`}>
+    <div className={`panel-outline scroll-mt-24 min-w-0 ${className}`} id={id}>
       <div ref={panelGlowRef} className="panel-glow ">
         <span
           ref={titleRef}

@@ -4,6 +4,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { IoIosDownload } from "react-icons/io";
 import { useSombraMode } from "../contexts/SombraModeContext";
+import sombraHack from "../assets/audio/sombra-hack.mp3";
 
 const LinkItem = function ({ children }) {
   return (
@@ -25,6 +26,12 @@ const ContactButton = function ({ variant, className, children }) {
 };
 function Contact() {
   const { sombraMode } = useSombraMode();
+
+  function playAudio() {
+    const audio = new Audio(sombraHack);
+    audio.volume = 0.7;
+    audio.play();
+  }
 
   return (
     <Panel title="Contact" id="contact">
@@ -75,6 +82,7 @@ function Contact() {
             href="/images/resume.png"
             download="Natalie_Falcon_Resume"
             className="w-full sm:max-w-[50%] hover:cursor-pointer"
+            onClick={playAudio}
           >
             <ContactButton variant="red" className="button-shimmer-red ">
               Download CV/Resume

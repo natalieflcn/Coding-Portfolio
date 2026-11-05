@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Button from "../ui/Button";
 import { useSombraMode } from "../../contexts/SombraModeContext";
 import { FiLogIn } from "react-icons/fi";
+import sombraBoop from "../../assets/audio/sombra-boop.mp3";
+import sombraOnline from "../../assets/audio/sombra-online.mp3";
 
 const navItems = [
   { title: "About Me", href: "about" },
@@ -58,6 +60,17 @@ function NavBar() {
 
     return () => observer.disconnect();
   }, []);
+
+  function handleClick() {
+    const audio = new Audio(sombraMode ? sombraBoop : sombraOnline);
+
+    if (!sombraMode) audio.volume = 0.3;
+    if (sombraMode) audio.volume = 0.6;
+    audio.play();
+
+    toggleSombraMode();
+  }
+
   return (
     <div
       className={`sticky md:fixed z-50 w-full bg-dark-300 shadow-lg opacity-95 flex flex-col gap-2 xs:flex-row xs:justify-between px-8 py-6 ${sombraMode && "mb-5"} items-center`}
@@ -75,7 +88,7 @@ function NavBar() {
       <Button
         variant={sombraMode ? "red" : "purple"}
         className={`button-shimmer-${sombraMode ? "red" : "purple"}`}
-        onClick={toggleSombraMode}
+        onClick={handleClick}
       >
         <span className="flex items-center gap-1">
           {sombraMode ? "Corporate Mode" : "Sombra Mode"}

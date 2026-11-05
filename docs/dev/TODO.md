@@ -20,7 +20,7 @@
 - [x] Add functionality to NavBar
   - [x] Highlight active nav item
 - [x] Add typing animation to 'Hey, I'm Natalie...'
-- [ ] Add a magenta trailing cursor TODO
+- [x] Add a magenta trailing cursor
 - [ ] Add Sombra sound bytes
   - [ ] 'BOOP!' to switching to Corporate Mode
   - [ ] 'I thought this was supposed to be...' to Download CV/Resume

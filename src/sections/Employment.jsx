@@ -11,9 +11,9 @@ const experience = [
     title: "Program Manager",
     sector: "Non-profit Organization",
     bullets: [
-      "Facilitated collaboration between engineering and marketing teams to design and launch a modernized website, translating diverse requirements into a unified product that met business, design, and user experience expectations.",
-      "Oversaw the end-to-end development lifecycle of the new company website, maintaining regular communication with developers to ensure feature functionality, usability, and stakeholder satisfaction.",
-      "Directed daily operations with a focus on alignment to organizational goals and our overarching mission.",
+      "Bridged communication between business stakeholders and an offshore software development team, translating organizational needs into actionable project requirements.",
+      "Collaborated with the vendor's project manager to coordinate development workflows, monitor milestones, review deliverables, and ensure alignment with product expectations.",
+      "Reviewed website mockups, approved development drafts, and produced digital assets and user documentation to support website modernization and transition.",
     ],
   },
   {
@@ -23,9 +23,10 @@ const experience = [
     title: "Social Media Manager",
     sector: "Non-profit Organization",
     bullets: [
-      "Facilitated collaboration between engineering and marketing teams to design and launch a modernized website, translating diverse requirements into a unified product that met business, design, and user experience expectations.",
-      "Oversaw the end-to-end development lifecycle of the new company website, maintaining regular communication with developers to ensure feature functionality, usability, and stakeholder satisfaction.",
-      "Directed daily operations with a focus on alignment to organizational goals and our overarching mission.",
+      "Identified, documented, and prioritized software defects within the organization's web portal, maintaining a bug-tracking log and coordinating resolution with the external development team.",
+      "Collaborated with developers to communicate new feature requests, report usability issues, and monitor implementation of platform improvements.",
+      "Created user guides and technical documentation to help staff and participants navigate the organization's web platform.",
+      "Developed data-driven digital content and marketing materials to strengthen brand visibility and audience engagement.",
     ],
   },
 ];

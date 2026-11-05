@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../ui/Button";
+import { useSombraMode } from "../../contexts/SombraModeContext";
+import { FiLogIn } from "react-icons/fi";
 
 const navItems = [
   { title: "About Me", href: "about" },
@@ -32,6 +34,7 @@ const NavItem = function ({ item, activeItem }) {
 
 function NavBar() {
   const [activeItem, setActiveItem] = useState("about");
+  const { sombraMode, toggleSombraMode } = useSombraMode();
 
   useEffect(() => {
     // creates an array of DOM elements with ids (for href)
@@ -65,8 +68,15 @@ function NavBar() {
         <NavItem item={item} key={i} activeItem={activeItem} />
       ))}
 
-      <Button variant="red" className="button-shimmer-red">
-        Corporate Mode
+      <Button
+        variant={sombraMode ? "red" : "purple"}
+        className={`button-shimmer-${sombraMode ? "red" : "purple"}`}
+        onClick={toggleSombraMode}
+      >
+        <span className="flex items-center gap-1">
+          {sombraMode ? "Corporate Mode" : "Sombra Mode"}
+          <FiLogIn />
+        </span>
       </Button>
     </div>
   );

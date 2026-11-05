@@ -8,10 +8,16 @@ import Background from "./components/decorative/Background";
 import NavBar from "./components/layout/NavBar";
 import Education from "./sections/Education";
 import Employment from "./sections/Employment";
+import { useSombraMode } from "./contexts/SombraModeContext";
 
 function App() {
+  const { sombraMode } = useSombraMode();
+
   return (
-    <>
+    <main
+      data-mode={sombraMode === true ? "sombra" : "corporate"}
+      className="flex flex-col "
+    >
       <Background />
       <NavBar />
 
@@ -37,7 +43,7 @@ function App() {
         <Skills />
         <Contact />
       </div>
-    </>
+    </main>
   );
 }
 

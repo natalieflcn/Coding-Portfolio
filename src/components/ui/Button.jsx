@@ -19,10 +19,11 @@ const variants = {
   active:shadow-[0_0_12px_--color-purple-100]`,
 };
 
-function Button({ variant = "red", className, children }) {
+function Button({ variant = "red", className, children, ...props }) {
   return (
     <button
       className={`${variants[variant]} ${className} font-mono font-bold px-2 py-1 text-xs lg:text-sm uppercase rounded-xs transition-colors duration-50 hover:cursor-pointer`}
+      {...props}
     >
       {children}{" "}
     </button>

@@ -56,7 +56,7 @@ function Contact() {
             rel="noopener noreferrer"
             className="w-full  sm:max-w-[50%] hover:cursor-pointer"
           >
-            <ContactButton variant="purple" className="button-shimmer-github">
+            <ContactButton variant="purple" className="button-shimmer-purple">
               View my GitHub profile
             </ContactButton>
           </a>

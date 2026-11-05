@@ -36,13 +36,19 @@ function About() {
           artistic vision into a memorable user experience.
         </p>
         <p>
-          My journey into programming wasn't linear. After college, I worked as
+          {/* My journey into programming wasn't linear. After college, I worked as
           a program manager for a non-profit, serving as the point of contact
           for our web vendors. But I realized I didn't want to just direct how
           websites were built, I wanted to create them... I transitioned back
           into programming and haven't stopped since. That background gives me a
           strong sense of user behavior and cross-functional communciation, and
-          it shapes how I approach code.
+          it shapes how I approach code. */}
+          Although my professional background isn't exclusively in software
+          engineering, I've worked closely with software development teams,
+          contributed to product improvements, translated stakeholder
+          requirements, and coordinated the resolution of technical issues.
+          These experiences have given me an understanding of the collaboration,
+          communication, and problem-solving involved in building software.
         </p>
         <p>
           I'm currently looking for junior software engineering roles and I'm
@@ -51,10 +57,10 @@ function About() {
         <p>
           Outside of code, I make art, play pool (badly), and reminisce about
           Overwatch.{" "}
-          <italic className="italic">
+          <span className="italic">
             Sombra Mode was inspired by Sombra's character design - check it
             out!
-          </italic>
+          </span>
         </p>
       </div>
     </Panel>

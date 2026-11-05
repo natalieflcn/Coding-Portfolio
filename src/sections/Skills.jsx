@@ -58,6 +58,7 @@ const skills = [
       { name: "Procreate", level: 1 },
       { name: "Canva", level: 1 },
       { name: "Figma", level: 1 },
+      { name: "Monday", level: 1 },
     ],
   },
 ];

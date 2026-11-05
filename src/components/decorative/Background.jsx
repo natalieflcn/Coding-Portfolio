@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import CircuitGrid from "../../assets/svg/circuit-grid.svg?react";
 import CircuitPaths from "../../assets/svg/circuit-paths-only.svg?react";
+import { useSombraMode } from "../../contexts/SombraModeContext";
 
 const PULSE_COLORS = [
   "var(--color-pink-100)",
@@ -9,9 +10,13 @@ const PULSE_COLORS = [
 ];
 
 function Background() {
+  const { sombraMode } = useSombraMode();
+
   const pulseRef = useRef(null);
 
   useEffect(() => {
+    if (!sombraMode) return;
+
     const strokePaths = pulseRef.current.querySelectorAll("path[stroke]");
     const fillPaths = pulseRef.current.querySelectorAll("path[fill]");
 
@@ -35,6 +40,7 @@ function Background() {
     });
   }, []);
 
+  if (!sombraMode) return null;
   return (
     <div
       aria-hidden="true"

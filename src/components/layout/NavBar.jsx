@@ -59,8 +59,12 @@ function NavBar() {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="sticky md:fixed z-50 w-full bg-dark-300 shadow-lg opacity-95 flex flex-col gap-2 xs:flex-row xs:justify-between px-8 py-6 mb-5 items-center">
-      <h2 className="uppercase text-shimmer text-xl lg:text-2xl">
+    <div
+      className={`sticky md:fixed z-50 w-full bg-dark-300 shadow-lg opacity-95 flex flex-col gap-2 xs:flex-row xs:justify-between px-8 py-6 ${sombraMode && "mb-5"} items-center`}
+    >
+      <h2
+        className={`uppercase ${sombraMode && "text-shimmer"} text-xl lg:text-2xl`}
+      >
         Natalie Falcon
       </h2>
 

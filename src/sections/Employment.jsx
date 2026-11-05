@@ -33,11 +33,11 @@ const experience = [
 
 const Job = function ({ item }) {
   return (
-    <div className=" w-full p-2 xs:p-3 flex flex-col md:flex-row gap-1 lg:gap-7 not-last:border-b not-last:pb-5  not-first:pt-5 border-blue-0  ">
+    <div className=" w-full p-2 xs:p-3 flex flex-col md:flex-row gap-0  md:gap-4 lg:gap-7 not-last:border-b not-last:pb-5  not-first:pt-5 border-blue-0  ">
       <p className="text-[0.7rem] text-left md:text-sm ">{item.year}</p>
       <div className="flex flex-col text-left flex-1 ">
         <div className="flex xs:gap-2">
-          <h3 className=" text-base sm:text-lg md:text-xl leading-snug ">
+          <h3 className="font-bold text-base sm:text-lg md:text-xl leading-snug ">
             {item.company}
           </h3>
           <img
@@ -45,10 +45,12 @@ const Job = function ({ item }) {
             className="w-16 h-auto self-center hidden xs:block"
           />
         </div>
-        <p className="font-mono font-semibold text-red-200 text-[0.7rem] leading-tight sm:text-xs md:text-sm">
-          {item.title}
+        <p className="font-mono font-semibold  text-[0.7rem] leading-tight sm:text-xs md:text-sm">
+          <span className="text-red-200">{item.title}</span>
         </p>
-        <p className="hidden xs:block  md:text-xs mt-0.75">{item.sector}</p>
+        <p className="hidden xs:block text-[0.7rem] md:text-xs md:mt-0.75">
+          {item.sector}
+        </p>
         <div className="flex flex-col mt-2 gap-2">
           {item.bullets.map((bullet, i) => (
             <div className="flex gap-2" key={i}>
@@ -69,10 +71,12 @@ const Job = function ({ item }) {
 
 function Employment() {
   return (
-    <Panel title="Employment">
-      {experience.map((item, i) => (
-        <Job item={item} key={i} />
-      ))}
+    <Panel title="Employment" id="employment">
+      <div className="p-1 xs:p-0">
+        {experience.map((item, i) => (
+          <Job item={item} key={i} />
+        ))}
+      </div>
     </Panel>
   );
 }

@@ -22,7 +22,7 @@ const projects = [
 ];
 const Project = function ({ project }) {
   return (
-    <div className="flex w-full text-start p-2 pt-3 ">
+    <div className="flex w-full text-start p-2 pt-3">
       <div className="flex flex-col gap-2 lg:flex-row lg:gap-5">
         <a href={project.link} className="lg:w-[50%]  w-full shrink-0">
           <video
@@ -36,7 +36,7 @@ const Project = function ({ project }) {
 
         <div className="flex flex-col gap-2  lg:text-start lg:gap-1">
           <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <h3 className="font-heading text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl hover:text-blue-0 hover:text-shadow-blue-100 hover:text-shadow-[0_0_4px_--color-light-100] active:text-blue-0 active:text-shadow-blue-100 active:text-shadow-[0_0_4px_--color-light-100] ">
+            <h3 className="font-heading text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl hover:text-blue-0 hover:text-shadow-blue-100 hover:text-shadow-[0_0_4px_--color-light-100] active:text-blue-0 active:text-shadow-blue-100 active:text-shadow-[0_0_4px_--color-light-100] in-data-[mode=corporate]:text-red-200 ">
               {project.title}
             </h3>
           </a>
@@ -46,7 +46,9 @@ const Project = function ({ project }) {
                 <strong className="font-mono text-red-200 text-[0.5rem] md:text-xs xl:text-sm">
                   {language}
                 </strong>
-                <strong>{i !== project.techStack.length - 1 && "|"} </strong>
+                <strong>
+                  {i !== project.techStack.length - 1 && <span>|</span>}{" "}
+                </strong>
               </span>
             ))}
           </div>
@@ -60,7 +62,7 @@ const Project = function ({ project }) {
 };
 function Projects() {
   return (
-    <Panel title="Projects">
+    <Panel title="Projects" id="projects">
       <div className="flex flex-col gap-2 xs:gap-5">
         {projects.map((project, i) => (
           <Project project={project} key={i} />

@@ -36,9 +36,9 @@ const courses = [
 const Certificate = function ({ item }) {
   return (
     <div className="flex flex-col leading-snug border-t-blue-0 border-t not-last:mb-1.5 pt-1">
-      <h3 className="text-xs xs:text-sm xl:text-base font-bold">
+      <h4 className="text-xs xs:text-sm xl:text-base font-bold">
         {item.title}
-      </h3>
+      </h4>
       <p className="text-[0.5rem] xs:text-[0.6rem] xl:text-[0.7rem]">Udemy</p>
       <p className="text-[0.5rem] xs:text-[0.6rem] xl:text-[0.7rem]">{`Issued ${item.date}`}</p>
       <div className="flex  xs:gap-y-2 gap-2 mt-1 flex-wrap">
@@ -57,9 +57,12 @@ const Certificate = function ({ item }) {
 
 function Education() {
   return (
-    <Panel title="Education">
+    <Panel title="Education" id="education">
       <div className="flex flex-col text-start py-1   mb-3 xs:pb-0 gap-2 xs:gap-4">
-        <div className=" sm:border-blue-0 sm:border-2 rounded-xs sm:bg-dark-300/60 p-3 pb-4">
+        <div
+          className=" sm:border-blue-0 sm:border-2 rounded-xs sm:bg-dark-300/60 p-3 pb-4"
+          id="higher-education"
+        >
           <h3 className="text-blue-100 font-heading text-sm xs:text-base xl:text-lg">
             Higher Education
           </h3>
@@ -68,7 +71,7 @@ function Education() {
             Science
           </p>
           <p className="text-[0.6rem] leading-snug xs:text-xs xl:text-sm">
-            Lehman CUNY College | NY, USA
+            Lehman CUNY College | Bronx, New York
           </p>
           <div className="flex flex-wrap gap-2 mt-1.5 gap-y-1.5 leading-relaxed">
             {courses.map((course, i) => (

@@ -53,10 +53,10 @@ const skills = [
   {
     category: "Workflow",
     items: [
-      { name: "VS Code", level: 2 },
-      { name: "GitHub", level: 1 },
-      { name: "Procreate", level: 1 },
-      { name: "Canva", level: 1 },
+      { name: "VS Code", level: 3 },
+      { name: "GitHub", level: 2 },
+      { name: "Procreate", level: 4 },
+      { name: "Canva", level: 4 },
       { name: "Figma", level: 1 },
       { name: "Monday", level: 1 },
     ],
@@ -65,11 +65,9 @@ const skills = [
 
 function Skills() {
   return (
-    <div>
-      <Panel title="Skills" id="skills">
-        <Accordion items={skills} />
-      </Panel>
-    </div>
+    <Panel title="Skills" id="skills">
+      <Accordion items={skills} />
+    </Panel>
   );
 }
 

@@ -3,6 +3,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import hexFull from "../../assets/images/hex-full.png";
 import hexEmpty from "../../assets/images/hex-empty.png";
+import { useSombraMode } from "../../contexts/SombraModeContext";
 
 const SubItem = function ({ subItem }) {
   let title = "";
@@ -27,8 +28,8 @@ const SubItem = function ({ subItem }) {
 
   return (
     <div className="flex flex-col items-start gap-1">
-      <p className="font-mono text-xs text-left text-red-200 font-semibold lg:text-sm">
-        {subItem.name}
+      <p className="font-mono text-xs text-left  font-semibold lg:text-sm">
+        <span className="text-red-200">{subItem.name}</span>
       </p>
       <div className="flex gap-1.25 lg:gap-1.5">
         {Array.from({ length: 5 }, (_, index) =>
@@ -45,6 +46,7 @@ const SubItem = function ({ subItem }) {
 };
 function Accordion({ items }) {
   const [openCategories, setOpenCategories] = useState([]);
+  const { sombraMode } = useSombraMode();
 
   const handleToggleCategory = function (category) {
     if (category === "all") return setOpenCategories(items);
@@ -62,14 +64,14 @@ function Accordion({ items }) {
     <div className="flex flex-col items-start ">
       <div className="flex flex-row pt-3  sm:pt-0 justify-center text-[0.7rem] sm:text-xs  gap-1 xs:gap-2 lg:pb-3 w-full lg:gap-5 font-mono ">
         <p
-          className="hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer"
+          className={`hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer`}
           onClick={() => handleToggleCategory("all")}
         >
           Expand
         </p>
-        |
+        <p>|</p>
         <p
-          className="hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer"
+          className=" hover:text-dark-100 transition-colors duration-75 hover:cursor-pointer"
           onClick={() => handleToggleCategory("none")}
         >
           Collapse
@@ -77,25 +79,41 @@ function Accordion({ items }) {
       </div>
       {items.map((item) => (
         <div
-          className="flex flex-col w-full not-last:border-b not-last:border-b-blue-0  hover:bg-dark-100 py-3 px-4 first:mt-2 transtion-bg duration-75 hover:cursor-pointer"
+          className={`flex flex-col w-full not-last:border-b ${sombraMode ? "not-last:border-b-blue-0" : "not-last:border-b-red-200 "} ${sombraMode ? "hover:bg-dark-100" : "hover:bg-[rgba(98,98,98,0.25)] "}  py-3 px-4 first:mt-2 transtion-bg duration-75 hover:cursor-pointer `}
           key={item.category}
           onClick={() => handleToggleCategory(item)}
         >
           <div className="flex w-full justify-between items-center text-left gap-1">
-            <strong className="text-xs xs:text-sm lg:text-base">
+            <strong
+              className={`text-xs xs:text-sm lg:text-base ${sombraMode ? "text-light-100" : "text-dark-300 "}`}
+            >
               {item.category}
             </strong>
             {openCategories &&
             openCategories.some((category) => category === item) ? (
-              <FaChevronUp size={15} fill="var(--color-blue-0)" />
+              <FaChevronUp
+                size={15}
+                fill={
+                  sombraMode ? "var(--color-blue-0)" : "var(--color-red-200)"
+                }
+              />
             ) : (
-              <FaChevronDown size={15} fill="var(--color-blue-0)" />
+              <FaChevronDown
+                size={15}
+                fill={
+                  sombraMode ? "var(--color-blue-0)" : "var(--color-red-200)"
+                }
+              />
             )}
           </div>
 
           {openCategories &&
             openCategories.some((category) => category === item) && (
-              <div className="flex justify-start py-2 flex-wrap gap-8 gap-y-2 lg:gap-y-5">
+              <div
+                className={
+                  "flex justify-start py-2 flex-wrap gap-8 gap-y-2 lg:gap-y-5"
+                }
+              >
                 {item.items.map((subItem, i) => (
                   <SubItem subItem={subItem} key={i} />
                 ))}

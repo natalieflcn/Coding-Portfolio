@@ -3,6 +3,7 @@ import Button from "../components/ui/Button";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { IoIosDownload } from "react-icons/io";
+import { useSombraMode } from "../contexts/SombraModeContext";
 
 const LinkItem = function ({ children }) {
   return (
@@ -23,6 +24,8 @@ const ContactButton = function ({ variant, className, children }) {
   );
 };
 function Contact() {
+  const { sombraMode } = useSombraMode();
+
   return (
     <Panel title="Contact" id="contact">
       <div className="flex flex-col gap-5 pt-5 ">
@@ -30,7 +33,7 @@ function Contact() {
           <IoLogoLinkedin
             className="hidden sm:block "
             size={40}
-            fill="var(--color-pink-300)"
+            fill={sombraMode ? "var(--color-pink-300)" : "#0A66C2"}
           />
           <a
             href="https://www.linkedin.com/in/natalieflcn/"
@@ -48,7 +51,7 @@ function Contact() {
           <FaGithub
             className="hidden sm:block "
             size={40}
-            fill="var(--color-pink-300)"
+            fill={sombraMode ? "var(--color-pink-300)" : "#24292E"}
           />
           <a
             href="https://github.com/natalieflcn"
@@ -66,7 +69,7 @@ function Contact() {
           <IoIosDownload
             className="hidden sm:block "
             size={40}
-            fill="var(--color-pink-300)"
+            fill={sombraMode ? "var(--color-pink-300)" : "var(--color-red-100)"}
           />
           <a
             href="/images/resume.png"

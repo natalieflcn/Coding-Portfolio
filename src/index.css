@@ -157,12 +157,6 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .circuit-pulse path {
-    display: none;
-  }
-}
-
 /* Glow and Shimmer Effects */
 
 .text-glow {
@@ -210,6 +204,10 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @keyframes shimmer {
@@ -518,10 +516,143 @@ body {
   vertical-align: text-bottom;
   background: currentColor;
   animation: blink 1s steps(1) infinite;
+
+  @media (max-width: 640px) {
+    height: 1.2rem;
+  }
 }
 
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+
+/* ---------- Corporate mode ---------- */
+[data-mode="corporate"] [data-mode="corporate"] .panel-glow,
+[data-mode="corporate"] .panel-outline {
+  filter: none;
+  box-shadow: none;
+  border-color: var(--color-dark-200);
+}
+
+[data-mode="corporate"] .panel::before,
+[data-mode="corporate"] .panel::after {
+  display: none;
+}
+
+[data-mode="corporate"] .panel {
+  background: var(--color-dark-100);
+  --inset: 10px;
+}
+
+[data-mode="corporate"] .panel-inner {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(99, 98, 98, 0.08) 0 2px,
+      transparent 2px 8px
+    ),
+    var(--color-light-100);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: var(--color-dark-300);
+  }
+
+  video {
+    border: none;
+  }
+}
+
+[data-mode="corporate"] .panel-title {
+  /* position: relative; */
+  /* bottom: 2px; */
+  @media (min-width: 640px) {
+    margin-top: 10px;
+    margin-left: 9px;
+  }
+}
+
+[data-mode="corporate"] .frame-blue-gradient {
+  background: linear-gradient(
+    140deg,
+    var(--color-dark-300),
+    var(--color-dark-100)
+  );
+}
+
+[data-mode="corporate"] .panel-scan .panel-inner::before {
+  animation: none;
+}
+
+[data-mode="corporate"] #projects {
+  color: var(--color-dark-300);
+
+  h3 {
+    /* color: var(--color-dark-200); */
+
+    &:hover {
+      color: var(--color-dark-100);
+      text-shadow: none;
+    }
+  }
+}
+
+[data-mode="corporate"] #education {
+  div {
+    border-color: var(--color-dark-100);
+
+    div:not(:first-child) {
+      border-top-color: var(--color-red-200);
+    }
+  }
+
+  p {
+    color: var(--color-dark-100);
+  }
+
+  h3 {
+    color: var(--color-red-200);
+  }
+
+  h4 {
+    color: var(--color-dark-300);
+  }
+
+  #higher-education {
+    background-color: rgba(171, 170, 172, 0.7);
+
+    p {
+      color: var(--color-dark-200);
+    }
+
+    @media (max-width: 500px) {
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
+[data-mode="corporate"] #employment {
+  div {
+    border-color: var(--color-red-200);
+  }
+}
+
+[data-mode="corporate"] .app-container {
+  @media (max-width: 500px) {
+    max-width: 90%;
+  }
+}
+
+[data-mode="corporate"] .button-shimmer-red,
+[data-mode="corporate"] .button-shimmer-linkedin,
+[data-mode="corporate"] .button-shimmer-purple {
+  box-shadow: none;
+  &:hover {
+    opacity: 0.7;
   }
 }

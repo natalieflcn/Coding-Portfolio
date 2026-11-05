@@ -3,19 +3,19 @@
 /* Font Definitions */
 @font-face {
   font-family: Orbitron;
-  src: url("src/assets/fonts/Orbitron-Bold.ttf");
+  src: url("./assets/fonts/Orbitron-Bold.ttf");
   font-weight: 700;
 }
 
 @font-face {
   font-family: Inter;
-  src: url("src/assets/fonts/Inter-VariableFont.ttf");
+  src: url("./assets/fonts/Inter-VariableFont.ttf");
   font-weight: 100 900;
 }
 
 @font-face {
   font-family: JetBrainsMono;
-  src: url("src/assets/fonts/JetBrainsMono-VariableFont.ttf");
+  src: url("./assets/fonts/JetBrainsMono-VariableFont.ttf");
   font-weight: 100 800;
 }
 

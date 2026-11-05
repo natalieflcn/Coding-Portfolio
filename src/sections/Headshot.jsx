@@ -1,6 +1,6 @@
 import Panel from "../components/layout/Panel";
 import HeadshotPhoto from "../assets/images/headshot.webp";
-
+import natySprite from "../assets/images/naty-sprite.webp";
 const Avatar = function () {
   return (
     <img
@@ -25,7 +25,7 @@ function Headshot() {
           <p>New York, New York</p>
         </div>
         <img
-          src="src/assets/images/naty-sprite.webp"
+          src={natySprite}
           className="w-15 sm:w-20 xl:w-25 xl:self-center xl:justify-self-end"
         />
       </div>

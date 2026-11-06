@@ -4,6 +4,8 @@ import { useSombraMode } from "../../contexts/SombraModeContext";
 import { FiLogIn } from "react-icons/fi";
 import sombraBoop from "../../assets/audio/sombra-boop.mp3";
 import sombraOnline from "../../assets/audio/sombra-online.mp3";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const navItems = [
   { title: "About Me", href: "about" },
@@ -86,13 +88,13 @@ function NavBar() {
       ))}
 
       <Button
-        variant={sombraMode ? "red" : "purple"}
-        className={`button-shimmer-${sombraMode ? "red" : "purple"}`}
+        variant={sombraMode ? "purple" : "red"}
+        className={sombraMode && `button-shimmer-purple`}
         onClick={handleClick}
       >
-        <span className="flex items-center gap-1">
-          {sombraMode ? "Corporate Mode" : "Sombra Mode"}
-          <FiLogIn />
+        <span className="flex items-center gap-2">
+          Sombra {sombraMode ? "On" : "Off"}
+          {sombraMode ? <AiOutlineCheckCircle /> : <AiOutlineCloseCircle />}
         </span>
       </Button>
     </div>

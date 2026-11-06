@@ -1,7 +1,7 @@
 import Panel from "../components/layout/Panel";
 import HeadshotPhoto from "../assets/images/headshot.webp";
 import natySprite from "../assets/images/naty-sprite.webp";
-import { useSombraMode } from "../contexts/SombraModeContext;";
+import { useSombraMode } from "../contexts/SombraModeContext";
 
 const Avatar = function () {
   return (

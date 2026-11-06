@@ -45,6 +45,7 @@ const skills = [
   {
     category: "Libraries and APIs",
     items: [
+      { name: "React Router", level: 2 },
       { name: "React Hook Form", level: 2 },
       { name: "React Query", level: 2 },
       { name: "Google Maps", level: 2 },

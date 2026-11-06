@@ -12,6 +12,7 @@ const skills = [
     category: "Languages",
     items: [
       { name: "JavaScript", level: 3 },
+      { name: "Java", level: 1 },
       { name: "HTML", level: 3 },
       { name: "CSS", level: 3 },
     ],
@@ -29,7 +30,10 @@ const skills = [
   },
   {
     category: "Databases",
-    items: [{ name: "MongoDB", level: 2 }],
+    items: [
+      { name: "MongoDB", level: 2 },
+      { name: "MySQL", level: 1 },
+    ],
   },
   {
     category: "CI/CD and Packaging",
@@ -55,9 +59,10 @@ const skills = [
     items: [
       { name: "VS Code", level: 3 },
       { name: "GitHub", level: 2 },
+      { name: "Postman", level: 2 },
+      { name: "Figma", level: 1 },
       { name: "Procreate", level: 4 },
       { name: "Canva", level: 4 },
-      { name: "Figma", level: 1 },
       { name: "Monday", level: 1 },
     ],
   },

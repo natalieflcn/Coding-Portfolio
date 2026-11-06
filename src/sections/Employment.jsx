@@ -5,7 +5,7 @@ import hex from "../assets/images/hex-full.png";
 
 const experience = [
   {
-    year: "2024 — 2025",
+    year: "2023 — 2025",
     company: "Benevolent",
     logo: benevolent,
     title: "Program Manager",
@@ -17,7 +17,7 @@ const experience = [
     ],
   },
   {
-    year: "2024 — 2025",
+    year: "2023 — 2025",
     company: "ReServe Inc.",
     logo: reserve,
     title: "Social Media Manager",

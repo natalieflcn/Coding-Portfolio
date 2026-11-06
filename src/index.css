@@ -595,3 +595,9 @@ body {
     border-color: var(--color-red-200);
   }
 }
+
+[data-mode="corporate"] #contact {
+  div {
+    border-color: var(--color-red-200);
+  }
+}

@@ -6,7 +6,6 @@ export function SombraModeProvider({ children }) {
 
   const toggleSombraMode = () => {
     setSombraMode((prev) => !prev);
-    console.log(sombraMode);
   };
 
   return (

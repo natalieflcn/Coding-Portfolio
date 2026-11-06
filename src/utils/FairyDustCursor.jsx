@@ -22,7 +22,7 @@ export const FairyDustCursor = ({
     const updateCanvasSize = () => {
       const newWidth = element ? element.clientWidth : window.innerWidth;
       const newHeight = element ? element.clientHeight : window.innerHeight;
-      console.log("vavva updateCanvasSize", newWidth, newHeight);
+
       setCanvasSize({ width: newWidth, height: newHeight });
     };
     updateCanvasSize();
@@ -32,6 +32,14 @@ export const FairyDustCursor = ({
     };
   }, [element]);
   useEffect(() => {
+    const hasMouse = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (!hasMouse || reduceMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const targetElement = element || document.body;

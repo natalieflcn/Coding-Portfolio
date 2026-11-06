@@ -66,7 +66,8 @@ const skills = [
       { name: "VS Code", level: 3 },
       { name: "GitHub", level: 2 },
       { name: "Postman", level: 2 },
-
+      { name: "Webpack", level: 1 },
+      { name: "Babel", level: 1 },
       { name: "Figma", level: 1 },
       { name: "Procreate", level: 4 },
       { name: "Canva", level: 4 },

@@ -1,6 +1,8 @@
 import Panel from "../components/layout/Panel";
 import HeadshotPhoto from "../assets/images/headshot.webp";
 import natySprite from "../assets/images/naty-sprite.webp";
+import { useSombraMode } from "../contexts/SombraModeContext;";
+
 const Avatar = function () {
   return (
     <img
@@ -11,6 +13,8 @@ const Avatar = function () {
 };
 
 function Headshot() {
+  const { sombraMode } = useSombraMode();
+
   return (
     <Panel showTab={false} className="h-full panel-scan ">
       <div className="flex flex-col items-center lg:flex-row px-2 py-3  gap-3 lg:gap-8 xl:flex-col   xl:text-center xl:gap-3 lg:text-left ">
@@ -24,10 +28,12 @@ function Headshot() {
           </p>
           <p>New York, New York</p>
         </div>
-        <img
-          src={natySprite}
-          className="w-15 sm:w-20 xl:w-25 xl:self-center xl:justify-self-end"
-        />
+        {sombraMode && (
+          <img
+            src={natySprite}
+            className="w-15 sm:w-20 xl:w-25 xl:self-center xl:justify-self-end"
+          />
+        )}
       </div>
     </Panel>
   );

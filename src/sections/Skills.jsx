@@ -44,6 +44,7 @@ const skills = [
       { name: "Namecheap", level: 2 },
       { name: "Netlify", level: 2 },
       { name: "Render", level: 1 },
+      { name: "Vite", level: 2 },
     ],
   },
   {
@@ -65,6 +66,7 @@ const skills = [
       { name: "VS Code", level: 3 },
       { name: "GitHub", level: 2 },
       { name: "Postman", level: 2 },
+
       { name: "Figma", level: 1 },
       { name: "Procreate", level: 4 },
       { name: "Canva", level: 4 },

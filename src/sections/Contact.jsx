@@ -81,7 +81,7 @@ function Contact() {
             fill={sombraMode ? "var(--color-pink-300)" : "var(--color-red-100)"}
           />
           <a
-            href="/images/resume.png"
+            href="/Natalie_Falcon_Resume.docx"
             download="Natalie_Falcon_Resume"
             className="w-full sm:max-w-[50%] hover:cursor-pointer"
             onClick={playAudio}

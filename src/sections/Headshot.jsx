@@ -28,6 +28,7 @@ function Headshot() {
           </p>
           <p>New York, New York</p>
         </div>
+
         {sombraMode && (
           <img
             src={natySprite}

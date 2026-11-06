@@ -4,6 +4,7 @@ import CircuitPaths from "../../assets/svg/circuit-paths-only.svg?react";
 import { useSombraMode } from "../../contexts/SombraModeContext";
 
 const PULSE_COLORS = [
+  "var(--color-purple-300)",
   "var(--color-pink-100)",
   "var(--color-pink-200)",
   "var(--color-pink-300)",
@@ -38,7 +39,7 @@ function Background() {
       path.style.setProperty("--duration", `${3 + Math.random() * 10}s`);
       path.style.setProperty("--delay", `${-Math.random() * 4}s`);
     });
-  }, []);
+  }, [sombraMode]);
 
   if (!sombraMode) return null;
   return (

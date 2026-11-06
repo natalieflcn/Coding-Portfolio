@@ -8,7 +8,7 @@ const projects = [
     title: "Naty's Pokédex",
     techStack: ["HTML", "CSS", "JavaScript"],
     description:
-      "Naty's Pokédex is a web-based application built using HTML, CSS, and vanilla JavaScript that mimics the functionality of a classic Pokédex. It interacts with the PokéAPI to fetch and display Pokémon data, allowing users to explore, search, and manage their favorite Pokémon in an engaging way.",
+      "Naty's Pokédex is a responsive vanilla JavaScript SPA that mimics the functionality of a classic Pokédex. It performs a live search against 1000+ Pokémon from PokéAPI and lets users track where they've caught each Pokémon on an interactive map - allowing users to explore, catch, and manage their favorite Pokémon in an engaging way.",
     link: "https://natys-pokedex.netlify.app/",
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     title: "Debí ir a Puerto Rico",
     techStack: ["React", "Node.js", "Express", "MongoDB"],
     description:
-      "Drawing inspiration from Bad Bunny's latest album (dtmf), Debí ir a Puerto Rico is a gamified tourism app designed to help people experience the best parts of Puerto Rico. Explorers can find the best way to experience the island while Ambassadors curate personal explorations promoting local businesses and their favorite parts of the island.",
+      "Drawing inspiration from Bad Bunny's latest album (dtmf), Debí ir a Puerto Rico is a gamified tourism app designed to connect people to the best parts of Puerto Rico. With 35 explorations and 190 locations, explorers are given a fresh way to experience the island, while Ambassadors can continue curating personalized explorations to promote local businesses and their favorite spots on the island.",
     link: "https://diapr.org/",
   },
 ];

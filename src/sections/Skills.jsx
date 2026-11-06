@@ -25,8 +25,11 @@ const skills = [
     ],
   },
   {
-    category: "Back-end and Runtimes",
-    items: [{ name: "Node.js", level: 2 }],
+    category: "Back-end Runtimes and Frameworks",
+    items: [
+      { name: "Node.js", level: 2 },
+      { name: "Mongoose", level: 1 },
+    ],
   },
   {
     category: "Databases",
@@ -36,8 +39,9 @@ const skills = [
     ],
   },
   {
-    category: "CI/CD and Packaging",
+    category: "Cloud, CI/CD, and Packaging",
     items: [
+      { name: "Namecheap", level: 2 },
       { name: "Netlify", level: 2 },
       { name: "Render", level: 1 },
     ],

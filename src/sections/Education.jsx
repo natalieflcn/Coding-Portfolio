@@ -67,13 +67,18 @@ function Education() {
             Higher Education
           </h3>
           <p className="mt-1 xs:mt-0 text-xs xs:text-sm xl:text-base">
-            <strong className="">Bachelor of Science</strong> in Computer
-            Science
+            <strong>Bachelor of Science</strong>
+            <span className="font-semibold text-[0.6rem] xs:text-xs xl:text-sm">
+              {" "}
+              (cum laude)
+            </span>{" "}
+            in Computer Science
           </p>
-          <p className="text-[0.6rem] leading-snug xs:text-xs xl:text-sm">(Cum Laude) | GPA: 3.7</p>
+
           <p className="text-[0.6rem] leading-snug xs:text-xs xl:text-sm">
             Lehman CUNY College | Bronx, New York
           </p>
+
           <div className="flex flex-wrap gap-2 mt-1.5 gap-y-1.5 leading-relaxed">
             {courses.map((course, i) => (
               <span

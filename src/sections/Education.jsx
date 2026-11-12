@@ -68,8 +68,9 @@ function Education() {
           </h3>
           <p className="mt-1 xs:mt-0 text-xs xs:text-sm xl:text-base">
             <strong className="">Bachelor of Science</strong> in Computer
-            Science (Cum Laude) | GPA: 3.7
+            Science
           </p>
+          <p className="text-[0.6rem] leading-snug xs:text-xs xl:text-sm">(Cum Laude) | GPA: 3.7</p>
           <p className="text-[0.6rem] leading-snug xs:text-xs xl:text-sm">
             Lehman CUNY College | Bronx, New York
           </p>
